@@ -1,0 +1,38 @@
+/* ============================================================
+   TRADE LINE — Global Reach (v1)
+   All values reference tokens.css. Logical properties only.
+   ============================================================ */
+
+.tl-reach__list {
+  list-style: none;
+}
+
+.tl-reach__card {
+  display: grid;
+  gap: var(--space-1);
+  padding: var(--space-5);
+  background-color: var(--color-surface);
+  border: var(--border-thin);
+  border-radius: var(--radius-md);
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
+}
+
+.tl-reach__card:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+  transform: translateY(calc(var(--space-1) * -1));
+}
+
+.tl-reach__flag {
+  font-size: var(--fs-3xl);
+  line-height: 1;
+  margin-block-end: var(--space-2);
+}
+
+.tl-reach__port {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}

@@ -1,0 +1,12 @@
+# OS
+.DS_Store
+
+# Internal workflow files (not for the client)
+.orc/
+
+# Internal screenshots (work-in-progress only)
+screenshots/
+
+# Editor
+.vscode/
+.idea/

@@ -1,0 +1,220 @@
+<!-- ============================================================
+     TRADE LINE — Icon System (v1)
+     Shared SVG sprite — ALL site icons as <symbol> definitions.
+     One visual family: 24x24 viewBox, 2px stroke, round caps/joins.
+
+     HOW TO USE
+     1. INLINE this sprite once per page, right after <body> opens
+        (before the header component). It is hidden — no visual impact.
+     2. Reference any icon anywhere with:
+        <svg class="tl-icon" aria-hidden="true"><use href="#tl-icon-import"/></svg>
+     3. Include icons.css in <head> (after tokens.css, before component
+        CSS) for the shared .tl-icon base class + size variants.
+     4. Filled brand glyphs (WhatsApp) use the .tl-icon--fill modifier.
+     5. RTL-aware arrows use .tl-icon--arrow (flips via CSS).
+     ============================================================ -->
+
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+
+  <!-- ============ Services (6) ============ -->
+
+  <!-- Import: box with down arrow -->
+  <symbol id="tl-icon-import" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="3" width="18" height="18" rx="2"/>
+    <path d="M12 6.5v8"/>
+    <path d="m8.5 11 3.5 3.5 3.5-3.5"/>
+  </symbol>
+
+  <!-- Export: box with up arrow -->
+  <symbol id="tl-icon-export" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="3" width="18" height="18" rx="2"/>
+    <path d="M12 17.5v-8"/>
+    <path d="m8.5 13 3.5-3.5 3.5 3.5"/>
+  </symbol>
+
+  <!-- Logistics: truck with cargo box -->
+  <symbol id="tl-icon-logistics" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="7" width="11" height="9" rx="1"/>
+    <path d="M13 10h3.5L20 13.5V16h-7V10Z"/>
+    <circle cx="6.5" cy="17.5" r="1.5"/>
+    <circle cx="16.5" cy="17.5" r="1.5"/>
+  </symbol>
+
+  <!-- Customs: approval stamp with check -->
+  <symbol id="tl-icon-customs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="4" y="7" width="16" height="13" rx="2"/>
+    <path d="M12 4v3"/>
+    <path d="m8.5 13.5 2.5 2.5 4.5-4.5"/>
+  </symbol>
+
+  <!-- Sourcing: globe with magnifier -->
+  <symbol id="tl-icon-sourcing" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="10" cy="10" r="6"/>
+    <path d="M4 10h12"/>
+    <path d="M10 4c1.8 2 1.8 10 0 14"/>
+    <path d="M10 4c-1.8 2-1.8 10 0 14"/>
+    <circle cx="17.5" cy="17.5" r="3.5"/>
+    <path d="M20 20l2.5 2.5"/>
+  </symbol>
+
+  <!-- Consulting: trending-up chart -->
+  <symbol id="tl-icon-consulting" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 17.5 9 11.5l4 4 7-7"/>
+    <path d="M14 8.5h6v6"/>
+  </symbol>
+
+  <!-- ============ Why Us (4) ============ -->
+
+  <!-- Global network: globe with meridians -->
+  <symbol id="tl-icon-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/>
+    <path d="M3.5 12h17"/>
+    <path d="M12 3.5c2.5 2.5 2.5 12.5 0 17"/>
+    <path d="M12 3.5c-2.5 2.5-2.5 12.5 0 17"/>
+  </symbol>
+
+  <!-- Fast: lightning bolt -->
+  <symbol id="tl-icon-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/>
+  </symbol>
+
+  <!-- Pricing: price tag -->
+  <symbol id="tl-icon-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3 21 12 12 21 3 12Z"/>
+    <circle cx="16" cy="7" r="1.5"/>
+  </symbol>
+
+  <!-- Support: headset with mic -->
+  <symbol id="tl-icon-headset" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 14a8 8 0 0 1 16 0"/>
+    <rect x="2.5" y="13" width="4" height="7" rx="2"/>
+    <rect x="17.5" y="13" width="4" height="7" rx="2"/>
+    <path d="M9.5 20h5"/>
+  </symbol>
+
+  <!-- ============ Process (6) ============ -->
+
+  <!-- Inquiry: message circle -->
+  <symbol id="tl-icon-message" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5Z"/>
+  </symbol>
+
+  <!-- Quotation: file with text lines -->
+  <symbol id="tl-icon-file-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 2.5h8l4 4V21.5H6V2.5Z"/>
+    <path d="M14 2.5v4h4"/>
+    <path d="M9 12h6"/>
+    <path d="M9 15.5h6"/>
+  </symbol>
+
+  <!-- Contract: file with check -->
+  <symbol id="tl-icon-file-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 2.5h8l4 4V21.5H6V2.5Z"/>
+    <path d="M14 2.5v4h4"/>
+    <path d="m9 13.5 2 2 4-4.5"/>
+  </symbol>
+
+  <!-- Production: factory with chimney -->
+  <symbol id="tl-icon-factory" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 21V10l5 3v-3l5 3V6h8v15H3Z"/>
+    <path d="M17.5 6V3"/>
+    <path d="M17.5 2c-1.2 0-1.2 1.2-2.4 1.2"/>
+  </symbol>
+
+  <!-- Shipping: ship with mast and pennant -->
+  <symbol id="tl-icon-ship" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2.5 15.5h19l-2.3 3.7a2 2 0 0 1-1.7.9H6.5a2 2 0 0 1-1.7-.9L2.5 15.5Z"/>
+    <path d="M12 15.5V5.5"/>
+    <path d="M12 5.5l5 2.5-5 2.5"/>
+  </symbol>
+
+  <!-- Delivery: package with check -->
+  <symbol id="tl-icon-package-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2.5 21 7v10l-9 5-9-5V7l9-4.5Z"/>
+    <path d="M12 11.5V22"/>
+    <path d="m6.5 15 2 2 3-3"/>
+  </symbol>
+
+  <!-- ============ Contact (4) ============ -->
+
+  <!-- Address: map pin -->
+  <symbol id="tl-icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 22c-4.5-4.2-7-7.6-7-11a7 7 0 1 1 14 0c0 3.4-2.5 6.8-7 11Z"/>
+    <circle cx="12" cy="10.5" r="2.5"/>
+  </symbol>
+
+  <!-- Phone: handset -->
+  <symbol id="tl-icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6.5 3.5h3.2l1.9 4.8-2.3 1.5a11 11 0 0 0 5.4 5.4l1.5-2.3 4.8 1.9v3.2a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2Z"/>
+  </symbol>
+
+  <!-- Email: envelope -->
+  <symbol id="tl-icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="5" width="18" height="14" rx="2"/>
+    <path d="m3 7.5 9 6 9-6"/>
+  </symbol>
+
+  <!-- Hours: clock -->
+  <symbol id="tl-icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/>
+    <path d="M12 7v5l3.5 2"/>
+  </symbol>
+
+  <!-- ============ Header (3) ============ -->
+
+  <!-- WhatsApp: official brand glyph (filled) -->
+  <symbol id="tl-icon-whatsapp" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+  </symbol>
+
+  <!-- Menu: hamburger -->
+  <symbol id="tl-icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 7h16"/>
+    <path d="M4 12h16"/>
+    <path d="M4 17h16"/>
+  </symbol>
+
+  <!-- Close: X -->
+  <symbol id="tl-icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 6l12 12"/>
+    <path d="M18 6 6 18"/>
+  </symbol>
+
+  <!-- ============ Footer socials (3) ============ -->
+
+  <!-- LinkedIn -->
+  <symbol id="tl-icon-linkedin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6Z"/>
+    <rect x="2" y="9" width="4" height="12" rx="0.5"/>
+    <circle cx="4" cy="4" r="2"/>
+  </symbol>
+
+  <!-- Facebook -->
+  <symbol id="tl-icon-facebook" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 2h-3a5 5 0 0 0-5 5v3H4v4h3v8h4v-8h3.5l.5-4H11V7a1 1 0 0 1 1-1h3V2Z"/>
+  </symbol>
+
+  <!-- X (Twitter) -->
+  <symbol id="tl-icon-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 4l7.2 9.3L4.4 20h2.6l5.2-5.5L16.8 20H20l-7.4-9.6L19.4 4h-2.6l-4.8 5.1L7.2 4H4Z"/>
+  </symbol>
+
+  <!-- ============ Misc (3) ============ -->
+
+  <!-- Check: checkmark -->
+  <symbol id="tl-icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m4.5 12.5 5 5 10-11"/>
+  </symbol>
+
+  <!-- Arrow: points inline-end, flips in RTL via .tl-icon--arrow -->
+  <symbol id="tl-icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 12h14"/>
+    <path d="m13.5 6.5 5.5 5.5-5.5 5.5"/>
+  </symbol>
+
+  <!-- Chevron: down (FAQ accordions) -->
+  <symbol id="tl-icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m5.5 9.5 6.5 6 6.5-6"/>
+  </symbol>
+
+</svg>

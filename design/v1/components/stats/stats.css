@@ -1,0 +1,30 @@
+/* ============================================================
+   TRADE LINE — Stats (v1)
+   Full-width dark band. Counters animate via js/main.js.
+   All values reference tokens.css. Logical properties only.
+   ============================================================ */
+
+.tl-stats {
+  background-color: var(--color-surface);
+  background-image: radial-gradient(circle at 50% 0%, var(--color-glow), transparent 60%);
+  border-block: var(--border-thin);
+}
+
+.tl-stats__item {
+  display: grid;
+  gap: var(--space-2);
+  text-align: center;
+}
+
+.tl-stats__number {
+  font-family: var(--font-display);
+  font-size: var(--fs-4xl);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  color: var(--color-accent);
+}
+
+.tl-stats__label {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}

@@ -1,0 +1,83 @@
+/* ============================================================
+   TRADE LINE — FAQ (v1)
+   Native details/summary accordion — zero JS.
+   All values from tokens.css. Logical properties only.
+   ============================================================ */
+
+/* ---------- Shared icon (mirrors a future utilities class) ---------- */
+.tl-icon {
+  inline-size: var(--space-5);
+  block-size: var(--space-5);
+  flex-shrink: 0;
+  stroke: currentColor;
+  stroke-width: var(--stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+/* ---------- List ---------- */
+.faq__list {
+  display: grid;
+  gap: var(--space-4);
+  max-width: var(--section-head-max);
+  margin-inline: auto;
+}
+
+/* ---------- Item ---------- */
+.faq__item {
+  background-color: var(--color-surface);
+  border: var(--border-thin);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-base);
+}
+
+.faq__item:hover,
+.faq__item[open] {
+  border-color: var(--color-accent);
+}
+
+/* ---------- Summary ---------- */
+.faq__item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  font-weight: 600;
+  line-height: var(--lh-tight);
+  cursor: pointer;
+  list-style: none; /* Firefox */
+  transition: color var(--transition-fast);
+}
+
+.faq__item summary::-webkit-details-marker {
+  display: none; /* Safari / Chrome */
+}
+
+.faq__item summary::marker {
+  content: none; /* Firefox */
+}
+
+.faq__item summary:hover {
+  color: var(--color-accent);
+}
+
+/* ---------- Chevron ---------- */
+.faq__chevron {
+  color: var(--color-accent);
+  transition: transform var(--transition-base);
+}
+
+.faq__item[open] .faq__chevron {
+  transform: rotate(180deg);
+}
+
+/* ---------- Answer ---------- */
+.faq__item > p {
+  padding-inline: var(--space-6);
+  padding-block-end: var(--space-5);
+  color: var(--color-text-muted);
+}

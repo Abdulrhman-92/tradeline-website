@@ -1,0 +1,116 @@
+<!-- ============================================================
+     TRADE LINE — Footer Component (v1)
+     4 columns: brand, quick links, services, contact + bottom bar.
+     ============================================================ -->
+
+<footer class="tl-footer">
+  <div class="tl-container">
+
+    <div class="tl-grid tl-grid--4 tl-footer__grid">
+
+      <!-- Column 1: Brand + Newsletter -->
+      <div class="tl-footer__col">
+        <a class="tl-footer__brand" href="index.html" aria-label="TRADE LINE">
+          <span class="tl-footer__logo-chip">
+            <img class="tl-footer__logo" src="../../assets/logo/00.png" alt="TRADE LINE" width="167" height="30">
+          </span>
+        </a>
+        <p class="tl-footer__blurb" data-ar="شريكك الموثوق في الاستيراد والتصدير والخدمات اللوجستية حول العالم." data-en="Your trusted partner for import, export, logistics and customs services worldwide.">شريكك الموثوق في الاستيراد والتصدير والخدمات اللوجستية حول العالم.</p>
+
+        <!-- Newsletter -->
+        <div class="tl-footer__newsletter">
+          <h3 class="tl-footer__newsletter-title" data-ar="النشرة البريدية" data-en="Newsletter">النشرة البريدية</h3>
+          <p class="tl-footer__newsletter-text" data-ar="اشترك ليصلك جديد العروض وأخبار الشحن." data-en="Subscribe to receive offers and shipping news.">اشترك ليصلك جديد العروض وأخبار الشحن.</p>
+          <form class="tl-footer__newsletter-form" data-newsletter novalidate>
+            <label class="tl-visually-hidden" for="footer-newsletter-email" data-ar="البريد الإلكتروني" data-en="Email address">البريد الإلكتروني</label>
+            <input id="footer-newsletter-email" type="email" required placeholder="name@example.com" autocomplete="email">
+            <button class="tl-footer__newsletter-btn" type="submit" aria-label="Subscribe">
+              <i class="fa-solid fa-paper-plane tl-icon" aria-hidden="true"></i>
+            </button>
+          </form>
+          <p class="tl-footer__newsletter-success" data-newsletter-success hidden data-ar="تم الاشتراك بنجاح!" data-en="Subscribed successfully!">تم الاشتراك بنجاح!</p>
+        </div>
+
+        <!-- TODO: replace href="#" with real social profile URLs -->
+        <ul class="tl-footer__social">
+          <li>
+            <a href="#" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in tl-icon" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f tl-icon" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="X">
+                <i class="fa-brands fa-x-twitter tl-icon" aria-hidden="true"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 2: Quick links -->
+      <div class="tl-footer__col">
+        <h3 class="tl-footer__title" data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h3>
+        <ul class="tl-footer__list">
+          <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+          <li><a href="about.html" data-ar="من نحن" data-en="About">من نحن</a></li>
+          <li><a href="services.html" data-ar="خدماتنا" data-en="Services">خدماتنا</a></li>
+          <li><a href="contact.html" data-ar="تواصل" data-en="Contact">تواصل</a></li>
+          <li><a href="blog.html" data-ar="المدونة" data-en="Blog">المدونة</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Services -->
+      <div class="tl-footer__col">
+        <h3 class="tl-footer__title" data-ar="خدماتنا" data-en="Our Services">خدماتنا</h3>
+        <ul class="tl-footer__list">
+          <li><a href="services.html" data-ar="الاستيراد" data-en="Import">الاستيراد</a></li>
+          <li><a href="services.html" data-ar="التصدير" data-en="Export">التصدير</a></li>
+          <li><a href="services.html" data-ar="الخدمات اللوجستية" data-en="Logistics">الخدمات اللوجستية</a></li>
+          <li><a href="services.html" data-ar="التخليص الجمركي" data-en="Customs Clearance">التخليص الجمركي</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Contact -->
+      <div class="tl-footer__col">
+        <h3 class="tl-footer__title" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h3>
+        <!-- TODO: replace with real contact details -->
+        <ul class="tl-footer__contact">
+          <li>
+              <i class="fa-solid fa-location-dot tl-icon" aria-hidden="true"></i>
+            <span data-ar="القاهرة، مصر" data-en="Cairo, Egypt">القاهرة، مصر</span>
+          </li>
+          <li>
+              <i class="fa-solid fa-phone tl-icon" aria-hidden="true"></i>
+            <span data-ar="+20 100 000 0000" data-en="+20 100 000 0000">+20 100 000 0000</span>
+          </li>
+          <li>
+              <i class="fa-solid fa-envelope tl-icon" aria-hidden="true"></i>
+            <span data-ar="info@tradeline.com" data-en="info@tradeline.com">info@tradeline.com</span>
+          </li>
+          <li>
+              <i class="fa-solid fa-clock tl-icon" aria-hidden="true"></i>
+            <span data-ar="السبت - الخميس: 9ص - 6م" data-en="Sat - Thu: 9AM - 6PM">السبت - الخميس: 9ص - 6م</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="tl-footer__bottom">
+      <p class="tl-footer__copy">
+        © <span data-year></span>
+        <span data-ar="ترايد لاين" data-en="TRADE LINE">ترايد لاين</span>
+      </p>
+      <ul class="tl-footer__legal">
+        <li><a href="#" data-ar="سياسة الخصوصية" data-en="Privacy Policy">سياسة الخصوصية</a></li>
+        <li><a href="#" data-ar="الشروط والأحكام" data-en="Terms of Service">الشروط والأحكام</a></li>
+      </ul>
+    </div>
+
+  </div>
+</footer>

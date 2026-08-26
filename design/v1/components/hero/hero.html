@@ -1,0 +1,96 @@
+<!-- ============================================================
+     TRADE LINE — Hero (v2.0)
+     Cinematic industrial luxury: full-viewport background image
+     with multi-layer scrims, drifting glow orbs, blueprint grid,
+     massive gradient-accent headline, glass stats panel, and a
+     scroll indicator. Bilingual AR/EN — Arabic default (RTL).
+     Logical properties only.
+     ============================================================ -->
+<section class="tl-hero" id="hero" aria-labelledby="hero-title">
+  <!-- Cinematic background: image + multi-layer scrims -->
+  <div class="tl-hero__bg" aria-hidden="true">
+    <div class="tl-hero__parallax">
+      <img class="tl-hero__bg-img" src="https://images.unsplash.com/photo-1675176785665-8d6aef6b7d8a?w=1600&q=80&fm=webp" alt="" width="1600" height="1067" fetchpriority="high" decoding="async">
+      <div class="tl-hero__scrim tl-hero__scrim--bottom"></div>
+      <div class="tl-hero__scrim tl-hero__scrim--side"></div>
+      <div class="tl-hero__scrim tl-hero__scrim--dark"></div>
+    </div>
+  </div>
+
+  <!-- Living glow orbs -->
+  <div class="tl-hero__orb tl-hero__orb--one" aria-hidden="true"></div>
+  <div class="tl-hero__orb tl-hero__orb--two" aria-hidden="true"></div>
+  <div class="tl-hero__orb tl-hero__orb--three" aria-hidden="true"></div>
+
+  <!-- Blueprint grid moved to body::before (site-wide overlay) -->
+
+  <div class="tl-container tl-hero__inner">
+    <!-- Content column (inline-start side) -->
+    <div class="tl-hero__content">
+      <span class="tl-badge">
+        <span class="tl-hero__badge-dot" aria-hidden="true"></span>
+        <span data-ar="منذ 2002 — رائدة التعبئة والتغليف" data-en="Since 2002 — Packaging Industry Leader">منذ 2002 — رائدة التعبئة والتغليف</span>
+      </span>
+
+      <!-- Headline split into translatable spans so the gradient
+           accent word survives the language switcher (textContent swap) -->
+      <h1 id="hero-title" class="tl-hero__title">
+        <span data-ar="نصنع" data-en="We Craft">نصنع</span>
+        <span class="tl-hero__accent" data-ar="التغليف" data-en="Packaging">التغليف</span>
+        <span data-ar="الذي يصل بمنتجاتك إلى العالم" data-en="That Carries Your Products to the World">الذي يصل بمنتجاتك إلى العالم</span>
+      </h1>
+
+      <p class="tl-hero__lead" data-ar="منذ عام 2002، نصنع أكياس ولفائف البولي إيثيلين والبولي بروبيلين بأعلى معايير الجودة — من الصوب الزراعية إلى التغليف الفائق — ونصدرها إلى أكثر من 40 دولة." data-en="Since 2002, we manufacture polyethylene and polypropylene bags and rolls to the highest standards — from agricultural greenhouses to premium packaging — exported to 40+ countries.">منذ عام 2002، نصنع أكياس ولفائف البولي إيثيلين والبولي بروبيلين بأعلى معايير الجودة — من الصوب الزراعية إلى التغليف الفائق — ونصدرها إلى أكثر من 40 دولة.</p>
+
+      <div class="tl-hero__actions">
+        <a class="tl-btn tl-btn--primary tl-hero__cta tl-hero__cta--primary" href="contact.html" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</a>
+        <a class="tl-btn tl-btn--outline tl-hero__cta tl-hero__cta--glass" href="services.html" data-ar="خدماتنا" data-en="Our Services">خدماتنا</a>
+      </div>
+
+      <!-- Trust row (icons stay OUTSIDE the data-ar/data-en spans) -->
+      <ul class="tl-hero__trust">
+        <li class="tl-hero__trust-item">
+          <i class="fa-solid fa-stamp tl-icon tl-hero__trust-icon" aria-hidden="true"></i>
+          <span data-ar="معتمدون ISO" data-en="ISO Certified">معتمدون ISO</span>
+        </li>
+        <li class="tl-hero__trust-item">
+          <i class="fa-solid fa-clock tl-icon tl-hero__trust-icon" aria-hidden="true"></i>
+          <span data-ar="20+ سنة خبرة" data-en="20+ Years Experience">20+ سنة خبرة</span>
+        </li>
+        <li class="tl-hero__trust-item">
+          <i class="fa-solid fa-globe tl-icon tl-hero__trust-icon" aria-hidden="true"></i>
+          <span data-ar="40+ دولة نخدمها" data-en="40+ Countries Served">40+ دولة نخدمها</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Glass stats panel -->
+  <div class="tl-container tl-hero__stats-wrap">
+    <div class="tl-hero__stats">
+      <div class="tl-hero__stat">
+        <span class="tl-hero__stat-num" data-count="20" data-count-suffix="+">0</span>
+        <span class="tl-hero__stat-label" data-ar="سنة خبرة" data-en="Years of Experience">سنة خبرة</span>
+      </div>
+      <div class="tl-hero__stat">
+        <span class="tl-hero__stat-num" data-count="40" data-count-suffix="+">0</span>
+        <span class="tl-hero__stat-label" data-ar="دولة نخدمها" data-en="Countries Served">دولة نخدمها</span>
+      </div>
+      <div class="tl-hero__stat">
+        <span class="tl-hero__stat-num" data-count="1200" data-count-suffix="+">0</span>
+        <span class="tl-hero__stat-label" data-ar="شحنة سنوياً" data-en="Shipments per Year">شحنة سنوياً</span>
+      </div>
+      <div class="tl-hero__stat">
+        <span class="tl-hero__stat-num" data-count="98" data-count-suffix="%">0</span>
+        <span class="tl-hero__stat-label" data-ar="رضا العملاء" data-en="Client Satisfaction">رضا العملاء</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <a class="tl-hero__scroll" href="#about-preview-title" aria-label="Scroll to next section">
+    <svg class="tl-hero__scroll-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M6 9l6 6 6-6"/>
+    </svg>
+  </a>
+</section>

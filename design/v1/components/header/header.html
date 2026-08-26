@@ -1,0 +1,60 @@
+<!-- ============================================================
+     TRADE LINE — Header Component (v1)
+     Sticky top bar: brand chip, nav, AR/EN pill toggle, WhatsApp CTA,
+     mobile hamburger + slide-in menu.
+     Menu + language logic lives in js/main.js (data-attribute contract).
+     ============================================================ -->
+
+<header class="tl-header">
+  <div class="tl-container tl-header__inner">
+
+    <!-- Brand: logo sits on a white chip so the black wordmark
+         stays clearly visible on the dark header bar -->
+    <a class="tl-header__brand" href="index.html" aria-label="TRADE LINE">
+      <span class="tl-header__logo-chip">
+        <img class="tl-header__logo" src="../../assets/logo/00.png" alt="TRADE LINE" width="167" height="30">
+      </span>
+    </a>
+
+    <!-- Nav: inline row on desktop, slide-in panel on mobile (main.js toggles .is-open) -->
+    <nav class="tl-header__nav" id="site-menu" data-menu aria-label="Main navigation">
+      <!-- Brand chip repeated inside the mobile panel -->
+      <a class="tl-header__brand tl-header__brand--menu" href="index.html" aria-label="TRADE LINE">
+        <span class="tl-header__logo-chip">
+          <img class="tl-header__logo" src="../../assets/logo/00.png" alt="TRADE LINE" width="167" height="30">
+        </span>
+      </a>
+      <ul class="tl-header__nav-list">
+        <li><a class="tl-header__link" href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+        <li><a class="tl-header__link" href="about.html" data-ar="من نحن" data-en="About">من نحن</a></li>
+        <li><a class="tl-header__link" href="services.html" data-ar="خدماتنا" data-en="Services">خدماتنا</a></li>
+        <li><a class="tl-header__link" href="contact.html" data-ar="تواصل" data-en="Contact">تواصل</a></li>
+        <li><a class="tl-header__link" href="blog.html" data-ar="المدونة" data-en="Blog">المدونة</a></li>
+      </ul>
+    </nav>
+
+    <!-- Actions -->
+    <div class="tl-header__actions">
+
+      <!-- Language toggle: single icon showing the CURRENT language (main.js toggles) -->
+      <button class="tl-header__lang-toggle" type="button" data-lang-toggle aria-label="English" title="English">
+        <i class="fa-solid fa-globe tl-icon" aria-hidden="true"></i>
+        <span class="tl-header__lang-code" data-lang-code>ع</span>
+      </button>
+
+      <!-- WhatsApp CTA — TODO: replace href with the real wa.me number -->
+      <a class="tl-btn tl-btn--primary tl-header__cta" href="https://wa.me/" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <i class="fa-brands fa-whatsapp tl-icon tl-icon--fill" aria-hidden="true"></i>
+        <span data-ar="واتساب" data-en="WhatsApp">واتساب</span>
+      </a>
+
+      <!-- Mobile hamburger (main.js toggles aria-expanded) -->
+      <button class="tl-header__toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-menu" aria-label="Menu">
+        <span class="tl-header__toggle-bar"></span>
+        <span class="tl-header__toggle-bar"></span>
+        <span class="tl-header__toggle-bar"></span>
+      </button>
+
+    </div>
+  </div>
+</header>

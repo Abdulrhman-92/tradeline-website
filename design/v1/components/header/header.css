@@ -1,0 +1,289 @@
+/* ============================================================
+   TRADE LINE — Header Component (v1)
+   Sticky top bar + mobile slide-in menu.
+   All values reference tokens.css. Logical properties only.
+   ============================================================ */
+
+.tl-header {
+  /* Mobile slide-in panel width (not tokenized) */
+  --menu-w: min(80vw, 20rem);
+
+  position: sticky;
+  inset-block-start: 0;
+  z-index: var(--z-header);
+  block-size: var(--header-h);
+  transition: box-shadow var(--transition-fast);
+}
+
+/* Blur + translucent surface live on a pseudo-element so the
+   fixed mobile menu keeps the viewport as its containing block. */
+.tl-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: color-mix(in srgb, var(--color-surface) 88%, transparent);
+  border-block-end: var(--border-thin);
+  backdrop-filter: blur(var(--blur-header));
+  -webkit-backdrop-filter: blur(var(--blur-header));
+  z-index: -1;
+  transition: background-color var(--transition-fast);
+}
+
+.tl-header.is-scrolled {
+  box-shadow: var(--shadow-sm);
+}
+
+.tl-header.is-scrolled::before {
+  background-color: var(--color-surface);
+}
+
+.tl-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  block-size: 100%;
+}
+
+/* ---------- Brand ---------- */
+.tl-header__brand {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* White chip: the logo is black-on-transparent, so it needs a light
+   surface to stay clearly visible on the dark header bar. */
+.tl-header__logo-chip {
+  display: inline-flex;
+  align-items: center;
+  padding-block: var(--space-2);
+  padding-inline: var(--space-3);
+  background-color: var(--color-text);
+  border-radius: var(--radius-md);
+  box-shadow:
+    var(--shadow-sm),
+    0 0 0 1px color-mix(in srgb, var(--color-text) 25%, transparent);
+  transition: box-shadow var(--transition-fast);
+}
+
+.tl-header__brand:hover .tl-header__logo-chip {
+  box-shadow:
+    var(--shadow-md),
+    0 0 0 1px color-mix(in srgb, var(--color-text) 40%, transparent);
+}
+
+.tl-header__logo {
+  block-size: var(--logo-h);
+  inline-size: auto;
+}
+
+/* ---------- Nav (mobile-first: fixed slide-in panel) ---------- */
+.tl-header__nav {
+  position: fixed;
+  inset-block: 0;
+  inset-inline-end: calc(-1 * var(--menu-w));
+  inline-size: var(--menu-w);
+  padding: var(--space-7) var(--space-6);
+  background-color: var(--color-surface);
+  border-inline-start: var(--border-thin);
+  box-shadow: var(--shadow-md);
+  overflow-y: auto;
+  visibility: hidden;
+  transition:
+    inset-inline-end var(--transition-base),
+    visibility 0s var(--transition-base);
+}
+
+.tl-header__nav.is-open {
+  inset-inline-end: 0;
+  visibility: visible;
+  transition:
+    inset-inline-end var(--transition-base),
+    visibility 0s;
+}
+
+/* Brand chip inside the mobile panel (hidden on desktop) */
+.tl-header__brand--menu {
+  margin-block-end: var(--space-6);
+}
+
+.tl-header__nav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-5);
+  list-style: none;
+}
+
+.tl-header__link {
+  position: relative;
+  padding-block: var(--space-1);
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+/* Animated orange underline — grows from inline-start (RTL-aware) */
+.tl-header__link::after {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-end: 0;
+  inline-size: 0;
+  block-size: var(--stroke);
+  background-color: var(--color-accent);
+  border-radius: var(--radius-sm);
+  transition: inline-size var(--transition-base);
+}
+
+.tl-header__link:hover,
+.tl-header__link[aria-current="page"] {
+  color: var(--color-accent);
+}
+
+.tl-header__link:hover::after,
+.tl-header__link[aria-current="page"]::after {
+  inline-size: 100%;
+}
+
+/* ---------- Actions ---------- */
+.tl-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* Language toggle: single icon button showing the current language */
+.tl-header__lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding-block: var(--space-1);
+  padding-inline: var(--space-2);
+  border: var(--border-thin);
+  border-radius: var(--radius-lg);
+  background-color: color-mix(in srgb, var(--color-surface-2) 55%, transparent);
+  color: var(--color-text);
+  transition:
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.tl-header__lang-toggle:hover,
+.tl-header__lang-toggle:hover .tl-header__lang-code {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.tl-header__lang-code {
+  min-inline-size: 1.5em;
+  text-align: center;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* Compact CTA for the 72px bar */
+.tl-header__cta {
+  padding-block: var(--space-1);
+  padding-inline: var(--space-4);
+}
+
+.tl-header__toggle {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  padding: var(--space-2);
+  border: var(--border-thin);
+  border-radius: var(--radius-sm);
+}
+
+.tl-header__toggle-bar {
+  inline-size: var(--space-5);
+  block-size: var(--stroke);
+  background-color: var(--color-text);
+  border-radius: var(--radius-sm);
+  transition:
+    transform var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+/* Hamburger -> X (main.js keeps aria-expanded in sync) */
+.tl-header__toggle[aria-expanded="true"] .tl-header__toggle-bar:nth-child(1) {
+  transform: translateY(calc(var(--space-1) + var(--stroke))) rotate(45deg);
+}
+
+.tl-header__toggle[aria-expanded="true"] .tl-header__toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.tl-header__toggle[aria-expanded="true"] .tl-header__toggle-bar:nth-child(3) {
+  transform: translateY(calc((var(--space-1) + var(--stroke)) * -1)) rotate(-45deg);
+}
+
+/* ---------- Icons ---------- */
+.tl-icon {
+  inline-size: 1.25em;
+  block-size: 1.25em;
+  stroke: currentColor;
+  stroke-width: var(--stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+/* ---------- Desktop ---------- */
+@media (min-width: 64rem) /* mirrors --bp-desktop token (var() fails in @media) */ {
+  .tl-header__nav {
+    position: static;
+    inset: auto;
+    inline-size: auto;
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+    overflow: visible;
+    visibility: visible;
+  }
+
+  .tl-header__nav-list {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .tl-header__brand--menu {
+    display: none;
+  }
+
+  .tl-header__toggle {
+    display: none;
+  }
+}
+
+/* ---------- Mobile tweaks ---------- */
+@media (max-width: 63.99rem) /* mirrors --bp-mobile-max token */ {
+  /* Step the logo down so the chip + actions fit narrow screens */
+  .tl-header__logo {
+    block-size: calc(var(--logo-h) - var(--space-1));
+  }
+
+  .tl-header__logo-chip {
+    padding-inline: var(--space-2);
+  }
+
+  .tl-header__actions {
+    gap: var(--space-2);
+  }
+
+  .tl-header__cta {
+    padding-inline: var(--space-3);
+  }
+
+  .tl-header__cta span {
+    display: none;
+  }
+}
