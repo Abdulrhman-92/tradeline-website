@@ -1,0 +1,49 @@
+/* ============================================================
+   TRADE LINE — Icon System (v1)
+   Shared .tl-icon base class + size variants.
+   Font Awesome 6 (free) — icons are font glyphs, so sizing is
+   font-size based. All values reference tokens.css.
+   Include AFTER tokens.css, BEFORE component CSS.
+   ============================================================ */
+
+.tl-icon {
+  font-size: 1.25em;
+  line-height: 1;
+  color: currentColor;
+  flex-shrink: 0;
+}
+
+/* ---------- Size variants ---------- */
+.tl-icon--sm {
+  font-size: 1em;
+}
+
+.tl-icon--lg {
+  font-size: 2em;
+}
+
+/* ---------- RTL-aware arrow ----------
+   Points inline-end; flips with the document direction. */
+[dir="rtl"] .tl-icon--arrow {
+  transform: scaleX(-1);
+}
+
+/* ---------- Component-specific sizes ----------
+   FA glyphs are sized with font-size, not width/height — these
+   mirror the old `svg` selectors in the component CSS files. */
+.tl-services__icon .tl-icon,
+.tl-why-us__icon .tl-icon,
+.tl-process__icon .tl-icon,
+.contact__card-icon,
+.tl-whatsapp__icon {
+  font-size: var(--space-6); /* was --space-6 (32px) */
+}
+
+.tl-hero__trust-icon,
+.tl-footer__social .tl-icon {
+  font-size: var(--fs-md); /* was --fs-md (18px) */
+}
+
+.faq__chevron {
+  font-size: var(--space-5); /* was --space-5 (24px) */
+}

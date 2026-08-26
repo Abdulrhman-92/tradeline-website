@@ -1,0 +1,40 @@
+/* ============================================================
+   TRADE LINE — Page Hero (v1)
+   Compact inner-page hero. All values from tokens.css.
+   Logical properties only.
+   ============================================================ */
+
+.page-hero {
+  position: relative;
+  padding-block: var(--space-9);
+  border-block-end: var(--border-thin);
+}
+
+.page-hero__inner {
+  position: relative;
+  display: grid;
+  gap: var(--space-4);
+  max-width: var(--section-head-max);
+}
+
+/* ---------- Breadcrumb ---------- */
+.page-hero__breadcrumb a {
+  color: var(--color-text-muted);
+}
+
+.page-hero__breadcrumb a:hover {
+  color: var(--color-accent);
+}
+
+.page-hero__breadcrumb [aria-current="page"] {
+  color: var(--color-accent);
+}
+
+.page-hero__breadcrumb [aria-hidden="true"] {
+  color: var(--color-text-muted);
+}
+
+/* ---------- Subtitle ---------- */
+.page-hero__inner > p {
+  color: var(--color-text-muted);
+}

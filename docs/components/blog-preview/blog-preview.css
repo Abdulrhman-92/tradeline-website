@@ -1,0 +1,96 @@
+/* ============================================================
+   TRADE LINE — Blog Preview (v1)
+   All values reference tokens.css. Logical properties only.
+   ============================================================ */
+
+.tl-blog__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+  margin-block-end: var(--space-7);
+}
+
+.tl-blog__head .tl-section-head {
+  margin-block-end: 0;
+}
+
+.tl-blog__card {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+
+.tl-blog__media {
+  display: block;
+}
+
+.tl-blog__media img {
+  inline-size: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.tl-blog__body {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  flex: 1;
+  align-content: start;
+}
+
+.tl-blog__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.tl-blog__date {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}
+
+.tl-blog__card h3 a {
+  color: var(--color-text);
+}
+
+.tl-blog__card h3 a:hover {
+  color: var(--color-accent);
+}
+
+.tl-blog__excerpt {
+  color: var(--color-text-muted);
+}
+
+.tl-blog__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.tl-blog__link svg {
+  inline-size: var(--space-4);
+  block-size: var(--space-4);
+  stroke-width: var(--stroke);
+  transition: transform var(--transition-fast);
+}
+
+.tl-blog__link:hover svg {
+  transform: translateX(var(--space-1));
+}
+
+/* Arrow points inline-end — flip for RTL */
+html[dir="rtl"] .tl-blog__link svg {
+  transform: scaleX(-1);
+}
+
+html[dir="rtl"] .tl-blog__link:hover svg {
+  transform: scaleX(-1) translateX(var(--space-1));
+}

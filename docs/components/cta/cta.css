@@ -1,0 +1,34 @@
+/* ============================================================
+   TRADE LINE — CTA Banner (v2)
+   Dark surface + orange glow (image moved to the contact section).
+   All values from tokens.css. Logical properties only.
+   ============================================================ */
+
+.cta {
+  position: relative;
+  padding-block: var(--space-9);
+  background-color: var(--color-surface);
+  border-block: var(--border-thin);
+}
+
+/* Orange glow */
+.cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, var(--color-glow), transparent 60%);
+}
+
+.cta__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: var(--space-5);
+  max-width: var(--section-head-max);
+  text-align: center;
+}
+
+.cta__inner p {
+  color: var(--color-text-muted);
+}

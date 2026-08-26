@@ -1,0 +1,198 @@
+/* ============================================================
+   TRADE LINE — Process (v1)
+   dbolt-style icon timeline: 6 gradient icon steps on a route
+   line + tall factory image with a floating "Since 2002" badge.
+   All values reference tokens.css. Logical properties only.
+   ============================================================ */
+
+.tl-process .tl-section-head > p:last-child {
+  color: var(--color-text-muted);
+}
+
+/* ---------- Layout: stacked on mobile, 2 columns on desktop ---------- */
+.tl-process__layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+}
+
+/* ---------- Media: tall image + accent frame + floating badge ---------- */
+.tl-process__media {
+  position: relative;
+}
+
+/* Offset accent frame behind the image */
+.tl-process__media::before {
+  content: "";
+  position: absolute;
+  inset-block-start: calc(var(--space-5) * -1);
+  inset-inline-end: calc(var(--space-5) * -1);
+  inset-block-end: var(--space-5);
+  inset-inline-start: var(--space-5);
+  border: var(--border-accent);
+  border-radius: var(--radius-lg);
+  z-index: -1;
+}
+
+/* Soft orange glow behind the frame */
+.tl-process__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, var(--color-glow), transparent 70%);
+  z-index: -2;
+}
+
+.tl-process__media img {
+  inline-size: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border: var(--border-thin);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+/* Floating glass badge */
+.tl-process__badge {
+  position: absolute;
+  inset-block-end: var(--space-5);
+  inset-inline-start: var(--space-5);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding-block: var(--space-2);
+  padding-inline: var(--space-4);
+  background-color: color-mix(in srgb, var(--color-bg) 55%, transparent);
+  backdrop-filter: blur(var(--blur-header));
+  border: var(--border-thin);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+
+.tl-process__badge::before {
+  content: "";
+  inline-size: var(--space-2);
+  block-size: var(--space-2);
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  box-shadow: var(--shadow-glow);
+}
+
+/* ---------- Timeline: vertical on mobile, horizontal on desktop ---------- */
+.tl-process__timeline {
+  position: relative;
+  display: grid;
+  gap: var(--space-6);
+  list-style: none;
+}
+
+/* Route line — translucent, icons sit ON it */
+.tl-process__timeline::before {
+  content: "";
+  position: absolute;
+  inset-block-start: calc((var(--space-8) - var(--space-2)) / 2);
+  inset-block-end: calc((var(--space-8) - var(--space-2)) / 2);
+  inset-inline-start: calc((var(--space-8) - var(--space-2)) / 2);
+  border-inline-start: var(--stroke) solid var(--color-border);
+}
+
+.tl-process__step {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-4);
+  align-items: start;
+}
+
+/* Gradient icon circle sitting on the line */
+.tl-process__icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  inline-size: calc(var(--space-8) - var(--space-2));
+  block-size: calc(var(--space-8) - var(--space-2));
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+  box-shadow: var(--shadow-glow);
+  color: var(--color-text);
+  z-index: 1;
+  transition: transform var(--transition-fast);
+}
+
+.tl-process__icon:hover {
+  transform: translateY(calc(var(--space-1) * -1));
+}
+
+.tl-process__icon svg {
+  inline-size: var(--space-6);
+  block-size: var(--space-6);
+}
+
+/* Number badge (01-06) on the icon's top corner */
+.tl-process__num {
+  position: absolute;
+  inset-block-start: calc(var(--space-1) * -1);
+  inset-inline-end: calc(var(--space-1) * -1);
+  display: grid;
+  place-items: center;
+  min-inline-size: var(--space-5);
+  block-size: var(--space-5);
+  padding-inline: var(--space-1);
+  background-color: var(--color-surface-2);
+  border: var(--border-thin);
+  border-radius: var(--radius-lg);
+  color: var(--color-accent);
+  font-family: var(--font-english);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.tl-process__body h3 {
+  margin-block-end: var(--space-2);
+}
+
+.tl-process__body p {
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+}
+
+/* ---------- Desktop: 2 columns + horizontal route line ---------- */
+/* Raw 64rem mirrors --bp-desktop — var() is unsupported in media queries
+   (same pattern as hero.css) */
+@media (min-width: 64rem) {
+  .tl-process__layout {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-8);
+  }
+
+  .tl-process__media {
+    flex: 0 0 38%;
+  }
+
+  .tl-process__timeline {
+    flex: 1;
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--space-3);
+    align-items: start;
+  }
+
+  /* Horizontal route line through the icon centers */
+  .tl-process__timeline::before {
+    inset-block-start: calc((var(--space-8) - var(--space-2)) / 2);
+    inset-block-end: auto;
+    inset-inline: calc((var(--space-8) - var(--space-2)) / 2);
+    border-inline-start: none;
+    border-block-start: var(--stroke) solid var(--color-border);
+  }
+
+  .tl-process__step {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: var(--space-3);
+    text-align: center;
+  }
+}

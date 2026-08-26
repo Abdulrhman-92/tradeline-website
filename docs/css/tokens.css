@@ -1,0 +1,100 @@
+/* ============================================================
+   TRADE LINE — Design Tokens (v1)
+   Single source of truth for ALL design constants.
+   Never hardcode a value in any other CSS file — use var(--...).
+   New constants are added here FIRST, then consumed via var().
+   ============================================================ */
+
+:root {
+  /* ---------- 1. Colors ---------- */
+  --color-bg: #0F0F0F;            /* page background (near-black) */
+  --color-surface: #1A1A1A;       /* cards, header, footer */
+  --color-surface-2: #242424;     /* raised surfaces, hover states */
+  --color-accent: #F97316;        /* brand orange */
+  --color-accent-light: #FB923C;  /* accent hover */
+  --color-text: #F5F5F4;          /* primary text */
+  --color-text-muted: #A3A3A3;    /* secondary text */
+  --color-border: rgba(255, 255, 255, 0.08); /* hairlines */
+  --color-glow: rgba(249, 115, 22, 0.15);    /* orange radial glow */
+
+  /* ---------- 2. Fonts ---------- */
+  --font-arabic: 'Cairo';
+  --font-english: 'Space Grotesk';
+  --font-display: var(--font-arabic); /* headings */
+  --font-body: var(--font-arabic);    /* body copy */
+  --track-wide: 0.12em;               /* eyebrow letter-spacing */
+
+  /* ---------- 3. Font sizes ---------- */
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 1.5rem;
+  --fs-2xl: 1.875rem;
+  --fs-3xl: 2.25rem;
+  --fs-4xl: 3rem;
+  --fs-hero: clamp(2.5rem, 6vw, 4.5rem);
+
+  /* ---------- 4. Line heights ---------- */
+  --lh-tight: 1.2;
+  --lh-base: 1.6;
+  --lh-loose: 1.8;
+
+  /* ---------- 5. Spacing ---------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --section-pad: var(--space-9); /* ONE section padding used everywhere */
+
+  /* ---------- 6. Radii ---------- */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  /* ---------- 7. Borders ---------- */
+  --border-thin: 1px solid var(--color-border);
+  --border-accent: 2px solid var(--color-accent);
+
+  /* ---------- 8. Shadows ---------- */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 40px var(--color-glow);
+
+  /* ---------- 9. Transitions ---------- */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.35s ease;
+
+  /* ---------- 10. Layout ---------- */
+  --container-max: 1200px;
+  --container-pad: clamp(1rem, 4vw, 2rem);
+  --header-h: 72px;
+  --logo-h: 1.875rem;   /* header logo height (inside the white chip) */
+  --blur-header: 12px;  /* header backdrop blur radius */
+  --grid-min-2: 30rem;  /* .tl-grid--2 min column width */
+  --grid-min-3: 20rem;  /* .tl-grid--3 min column width */
+  --grid-min-4: 15rem;  /* .tl-grid--4 min column width */
+  --section-head-max: 40rem;
+  --stroke: 2px;        /* icon strokes + decorative rules */
+
+  /* ---------- 11. Breakpoints ---------- */
+  --bp-desktop: 64rem;      /* desktop layout starts */
+  --bp-mobile-max: 63.99rem; /* mobile tweaks apply below desktop */
+
+  /* ---------- 12. Z-index ---------- */
+  --z-header: 100;
+  --z-menu: 200;
+  --z-whatsapp: 300;
+}
+
+/* English override — display/body fonts switch, layout flips via dir */
+html[lang="en"] {
+  --font-display: var(--font-english);
+  --font-body: var(--font-english);
+}

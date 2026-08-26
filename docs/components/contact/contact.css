@@ -1,0 +1,186 @@
+/* ============================================================
+   TRADE LINE — Contact (v1)
+   Form + info cards + WhatsApp. All values from tokens.css.
+   Logical properties only. Responsive via .tl-grid--2
+   (auto-fit) and intrinsic tracks — no media queries.
+   ============================================================ */
+
+/* ---------- Shared icon (mirrors a future utilities class) ---------- */
+.tl-icon {
+  inline-size: var(--space-5);
+  block-size: var(--space-5);
+  flex-shrink: 0;
+  stroke: currentColor;
+  stroke-width: var(--stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+/* ---------- Layout ---------- */
+.contact__grid {
+  align-items: start;
+}
+
+/* Home page variant: form only (info cards removed) — centered, comfortable width */
+.contact__grid--single {
+  max-inline-size: var(--section-head-max);
+  margin-inline: auto;
+}
+
+/* ---------- Section background: fixed image + light overlay ---------- */
+.contact {
+  position: relative;
+  background-image: url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* parallax — falls back to scroll on iOS */
+}
+
+/* Dark brand overlay — charcoal edges + orange center, SEMI-TRANSPARENT
+   so the fixed background image stays visible through it */
+.contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-bg) 88%, transparent) 0%,
+    color-mix(in srgb, var(--color-bg) 58%, var(--color-accent) 22%) 50%,
+    color-mix(in srgb, var(--color-bg) 88%, transparent) 100%
+  );
+  opacity: 0.82;
+}
+
+/* Content above the overlay */
+.contact > .tl-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Form (dark translucent — contrasts with the light inputs) ---------- */
+.contact__form {
+  display: grid;
+  gap: var(--space-5);
+  background-color: color-mix(in srgb, var(--color-surface-2) 59%, transparent);
+  color: var(--color-accent);
+  border: var(--border-thin);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-md);
+}
+
+.contact__field label {
+  color: var(--color-text);
+}
+
+/* Light inputs on the light form — white fields, dark text, subtle border */
+.contact__field input,
+.contact__field textarea {
+  background-color: #ffffff;
+  border-color: color-mix(in srgb, var(--color-bg) 20%, transparent);
+  color: var(--color-bg);
+}
+
+.contact__field input::placeholder,
+.contact__field textarea::placeholder {
+  color: color-mix(in srgb, var(--color-bg) 45%, transparent);
+  opacity: 1;
+}
+
+.contact__field {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.contact__field label {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.contact__field input,
+.contact__field textarea {
+  inline-size: 100%;
+  padding-block: var(--space-3);
+  padding-inline: var(--space-4);
+  background-color: #ffffff;
+  border: 1px solid color-mix(in srgb, var(--color-bg) 20%, transparent);
+  border-radius: var(--radius-sm);
+  color: var(--color-bg);
+  transition: border-color var(--transition-fast);
+}
+
+.contact__field input::placeholder,
+.contact__field textarea::placeholder {
+  color: color-mix(in srgb, var(--color-bg) 45%, transparent);
+  opacity: 1;
+}
+
+.contact__field input:focus-visible,
+.contact__field textarea:focus-visible {
+  border-color: var(--color-accent);
+}
+
+/* Invalid state — toggled by js/main.js */
+.contact__field input.is-invalid,
+.contact__field textarea.is-invalid {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-glow);
+}
+
+.contact__field textarea {
+  min-block-size: var(--space-9);
+  resize: vertical;
+}
+
+.contact__form .tl-btn {
+  inline-size: 100%;
+}
+
+.contact__success {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  font-size: var(--fs-sm);
+  color: var(--color-accent);
+  background-color: var(--color-glow);
+  border: var(--border-thin);
+  border-radius: var(--radius-sm);
+}
+
+/* ---------- Info cards ---------- */
+.contact__info {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.contact__cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.contact__card {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-5);
+}
+
+.contact__card-icon {
+  inline-size: var(--space-6);
+  block-size: var(--space-6);
+  color: var(--color-accent);
+}
+
+.contact__card p {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+/* ---------- WhatsApp ---------- */
+.contact__whatsapp {
+  inline-size: 100%;
+}

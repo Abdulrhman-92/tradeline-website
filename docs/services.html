@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>خدماتنا | ترايد لاين</title>
+  <meta name="description" content="استيراد، تصدير، لوجستيات، تخليص جمركي، توريد مصادر واستشارات — حلول تجارية متكاملة تحت سقف واحد.">
+
+  <!-- Fonts: Cairo (Arabic) + Space Grotesk (English) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 (icon font) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- AOS (deferred library) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/pages/services.css">
+
+  <!-- Icon system (shared SVG sprite) -->
+  <link rel="stylesheet" href="components/icons/icons.css">
+
+  <!-- Component CSS -->
+  <link rel="stylesheet" href="components/header/header.css">
+  <link rel="stylesheet" href="components/page-hero/page-hero.css">
+  <link rel="stylesheet" href="components/services/services.css">
+  <link rel="stylesheet" href="components/process/process.css">
+  <link rel="stylesheet" href="components/faq/faq.css">
+  <link rel="stylesheet" href="components/cta/cta.css">
+  <link rel="stylesheet" href="components/footer/footer.css">
+  <link rel="stylesheet" href="components/whatsapp/whatsapp.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       TRADE LINE — Icon System (v1)
+       Legacy SVG sprite — kept for reference only (unused).
+       Icons now use Font Awesome 6 (free) via the CDN in <head>.
+
+       HOW TO USE
+       1. Reference any icon anywhere with:
+          <i class="fa-solid fa-phone tl-icon" aria-hidden="true"></i>
+       2. Include icons.css in <head> (after tokens.css, before component
+          CSS) for the shared .tl-icon base class + size variants.
+       3. Brand glyphs (WhatsApp, socials) use the fa-brands prefix.
+       4. RTL-aware arrows use .tl-icon--arrow (flips via CSS).
+       ============================================================ -->
+
+  <svg style="display:none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+
+    <!-- ============ Services (6) ============ -->
+
+    <!-- Import: box with down arrow -->
+    <symbol id="tl-icon-import" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="2"/>
+      <path d="M12 6.5v8"/>
+      <path d="m8.5 11 3.5 3.5 3.5-3.5"/>
+    </symbol>
+
+    <!-- Export: box with up arrow -->
+    <symbol id="tl-icon-export" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="2"/>
+      <path d="M12 17.5v-8"/>
+      <path d="m8.5 13 3.5-3.5 3.5 3.5"/>
+    </symbol>
+
+    <!-- Logistics: truck with cargo box -->
+    <symbol id="tl-icon-logistics" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="7" width="11" height="9" rx="1"/>
+      <path d="M13 10h3.5L20 13.5V16h-7V10Z"/>
+      <circle cx="6.5" cy="17.5" r="1.5"/>
+      <circle cx="16.5" cy="17.5" r="1.5"/>
+    </symbol>
+
+    <!-- Customs: approval stamp with check -->
+    <symbol id="tl-icon-customs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="7" width="16" height="13" rx="2"/>
+      <path d="M12 4v3"/>
+      <path d="m8.5 13.5 2.5 2.5 4.5-4.5"/>
+    </symbol>
+
+    <!-- Sourcing: globe with magnifier -->
+    <symbol id="tl-icon-sourcing" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="10" cy="10" r="6"/>
+      <path d="M4 10h12"/>
+      <path d="M10 4c1.8 2 1.8 10 0 14"/>
+      <path d="M10 4c-1.8 2-1.8 10 0 14"/>
+      <circle cx="17.5" cy="17.5" r="3.5"/>
+      <path d="M20 20l2.5 2.5"/>
+    </symbol>
+
+    <!-- Consulting: trending-up chart -->
+    <symbol id="tl-icon-consulting" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 17.5 9 11.5l4 4 7-7"/>
+      <path d="M14 8.5h6v6"/>
+    </symbol>
+
+    <!-- ============ Why Us (4) ============ -->
+
+    <!-- Global network: globe with meridians -->
+    <symbol id="tl-icon-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="9"/>
+      <path d="M3.5 12h17"/>
+      <path d="M12 3.5c2.5 2.5 2.5 12.5 0 17"/>
+      <path d="M12 3.5c-2.5 2.5-2.5 12.5 0 17"/>
+    </symbol>
+
+    <!-- Fast: lightning bolt -->
+    <symbol id="tl-icon-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/>
+    </symbol>
+
+    <!-- Pricing: price tag -->
+    <symbol id="tl-icon-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3 21 12 12 21 3 12Z"/>
+      <circle cx="16" cy="7" r="1.5"/>
+    </symbol>
+
+    <!-- Support: headset with mic -->
+    <symbol id="tl-icon-headset" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 14a8 8 0 0 1 16 0"/>
+      <rect x="2.5" y="13" width="4" height="7" rx="2"/>
+      <rect x="17.5" y="13" width="4" height="7" rx="2"/>
+      <path d="M9.5 20h5"/>
+    </symbol>
+
+    <!-- ============ Process (6) ============ -->
+
+    <!-- Inquiry: message circle -->
+    <symbol id="tl-icon-message" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5Z"/>
+    </symbol>
+
+    <!-- Quotation: file with text lines -->
+    <symbol id="tl-icon-file-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 2.5h8l4 4V21.5H6V2.5Z"/>
+      <path d="M14 2.5v4h4"/>
+      <path d="M9 12h6"/>
+      <path d="M9 15.5h6"/>
+    </symbol>
+
+    <!-- Contract: file with check -->
+    <symbol id="tl-icon-file-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 2.5h8l4 4V21.5H6V2.5Z"/>
+      <path d="M14 2.5v4h4"/>
+      <path d="m9 13.5 2 2 4-4.5"/>
+    </symbol>
+
+    <!-- Production: factory with chimney -->
+    <symbol id="tl-icon-factory" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 21V10l5 3v-3l5 3V6h8v15H3Z"/>
+      <path d="M17.5 6V3"/>
+      <path d="M17.5 2c-1.2 0-1.2 1.2-2.4 1.2"/>
+    </symbol>
+
+    <!-- Shipping: ship with mast and pennant -->
+    <symbol id="tl-icon-ship" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2.5 15.5h19l-2.3 3.7a2 2 0 0 1-1.7.9H6.5a2 2 0 0 1-1.7-.9L2.5 15.5Z"/>
+      <path d="M12 15.5V5.5"/>
+      <path d="M12 5.5l5 2.5-5 2.5"/>
+    </symbol>
+
+    <!-- Delivery: package with check -->
+    <symbol id="tl-icon-package-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2.5 21 7v10l-9 5-9-5V7l9-4.5Z"/>
+      <path d="M12 11.5V22"/>
+      <path d="m6.5 15 2 2 3-3"/>
+    </symbol>
+
+    <!-- ============ Contact (4) ============ -->
+
+    <!-- Address: map pin -->
+    <symbol id="tl-icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 22c-4.5-4.2-7-7.6-7-11a7 7 0 1 1 14 0c0 3.4-2.5 6.8-7 11Z"/>
+      <circle cx="12" cy="10.5" r="2.5"/>
+    </symbol>
+
+    <!-- Phone: handset -->
+    <symbol id="tl-icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6.5 3.5h3.2l1.9 4.8-2.3 1.5a11 11 0 0 0 5.4 5.4l1.5-2.3 4.8 1.9v3.2a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 4.5 5.7a2 2 0 0 1 2-2.2Z"/>
+    </symbol>
+
+    <!-- Email: envelope -->
+    <symbol id="tl-icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="5" width="18" height="14" rx="2"/>
+      <path d="m3 7.5 9 6 9-6"/>
+    </symbol>
+
+    <!-- Hours: clock -->
+    <symbol id="tl-icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="9"/>
+      <path d="M12 7v5l3.5 2"/>
+    </symbol>
+
+    <!-- ============ Header (3) ============ -->
+
+    <!-- WhatsApp: official brand glyph (filled) -->
+    <symbol id="tl-icon-whatsapp" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+    </symbol>
+
+    <!-- Menu: hamburger -->
+    <symbol id="tl-icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 7h16"/>
+      <path d="M4 12h16"/>
+      <path d="M4 17h16"/>
+    </symbol>
+
+    <!-- Close: X -->
+    <symbol id="tl-icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 6l12 12"/>
+      <path d="M18 6 6 18"/>
+    </symbol>
+
+    <!-- ============ Footer socials (3) ============ -->
+
+    <!-- LinkedIn -->
+    <symbol id="tl-icon-linkedin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6Z"/>
+      <rect x="2" y="9" width="4" height="12" rx="0.5"/>
+      <circle cx="4" cy="4" r="2"/>
+    </symbol>
+
+    <!-- Facebook -->
+    <symbol id="tl-icon-facebook" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 2h-3a5 5 0 0 0-5 5v3H4v4h3v8h4v-8h3.5l.5-4H11V7a1 1 0 0 1 1-1h3V2Z"/>
+    </symbol>
+
+    <!-- X (Twitter) -->
+    <symbol id="tl-icon-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 4l7.2 9.3L4.4 20h2.6l5.2-5.5L16.8 20H20l-7.4-9.6L19.4 4h-2.6l-4.8 5.1L7.2 4H4Z"/>
+    </symbol>
+
+    <!-- ============ Misc (3) ============ -->
+
+    <!-- Check: checkmark -->
+    <symbol id="tl-icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m4.5 12.5 5 5 10-11"/>
+    </symbol>
+
+    <!-- Arrow: points inline-end, flips in RTL via .tl-icon--arrow -->
+    <symbol id="tl-icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 12h14"/>
+      <path d="m13.5 6.5 5.5 5.5-5.5 5.5"/>
+    </symbol>
+
+    <!-- Chevron: down (FAQ accordions) -->
+    <symbol id="tl-icon-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m5.5 9.5 6.5 6 6.5-6"/>
+    </symbol>
+
+  </svg>
+
+<!-- ============================================================
+     TRADE LINE — Header Component (v1)
+     Sticky top bar: brand chip, nav, AR/EN pill toggle, WhatsApp CTA,
+     mobile hamburger + slide-in menu.
+     Menu + language logic lives in js/main.js (data-attribute contract).
+     ============================================================ -->
+
+<header class="tl-header">
+  <div class="tl-container tl-header__inner">
+
+    <!-- Brand: logo sits on a white chip so the black wordmark
+         stays clearly visible on the dark header bar -->
+    <a class="tl-header__brand" href="index.html" aria-label="TRADE LINE">
+      <span class="tl-header__logo-chip">
+        <img class="tl-header__logo" src="../../assets/logo/00.png" alt="TRADE LINE" width="167" height="30">
+      </span>
+    </a>
+
+    <!-- Nav: inline row on desktop, slide-in panel on mobile (main.js toggles .is-open) -->
+    <nav class="tl-header__nav" id="site-menu" data-menu aria-label="Main navigation">
+      <!-- Brand chip repeated inside the mobile panel -->
+      <a class="tl-header__brand tl-header__brand--menu" href="index.html" aria-label="TRADE LINE">
+        <span class="tl-header__logo-chip">
+          <img class="tl-header__logo" src="../../assets/logo/00.png" alt="TRADE LINE" width="167" height="30">
+        </span>
+      </a>
+      <ul class="tl-header__nav-list">
+        <li><a class="tl-header__link" href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+        <li><a class="tl-header__link" href="about.html" data-ar="من نحن" data-en="About">من نحن</a></li>
+        <li><a class="tl-header__link" href="services.html" aria-current="page" data-ar="خدماتنا" data-en="Services">خدماتنا</a></li>
+        <li><a class="tl-header__link" href="contact.html" data-ar="تواصل" data-en="Contact">تواصل</a></li>
+        <li><a class="tl-header__link" href="blog.html" data-ar="المدونة" data-en="Blog">المدونة</a></li>
+      </ul>
+    </nav>
+
+    <!-- Actions -->
+    <div class="tl-header__actions">
+
+      <!-- Language toggle: single icon showing the CURRENT language (main.js toggles) -->
+      <button class="tl-header__lang-toggle" type="button" data-lang-toggle aria-label="English" title="English">
+        <i class="fa-solid fa-globe tl-icon" aria-hidden="true"></i>
+        <span class="tl-header__lang-code" data-lang-code>ع</span>
+      </button>
+
+      <!-- WhatsApp CTA — TODO: replace href with the real wa.me number -->
+      <a class="tl-btn tl-btn--primary tl-header__cta" href="https://wa.me/" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <i class="fa-brands fa-whatsapp tl-icon tl-icon--fill" aria-hidden="true"></i>
+        <span data-ar="واتساب" data-en="WhatsApp">واتساب</span>
+      </a>
+
+      <!-- Mobile hamburger (main.js toggles aria-expanded) -->
+      <button class="tl-header__toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-menu" aria-label="Menu">
+        <span class="tl-header__toggle-bar"></span>
+        <span class="tl-header__toggle-bar"></span>
+        <span class="tl-header__toggle-bar"></span>
+      </button>
+
+    </div>
+  </div>
+</header>
+
+  <main>
+
+    <!-- ============ Page Hero (component) ============ -->
+    <section class="page-hero" aria-labelledby="page-hero-title">
+      <div class="tl-bg-grid" aria-hidden="true"></div>
+      <div class="tl-glow" aria-hidden="true"></div>
+
+      <div class="tl-container page-hero__inner">
+        <nav class="tl-eyebrow page-hero__breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page" data-ar="خدماتنا" data-en="Our Services">خدماتنا</span>
+        </nav>
+
+        <h1 id="page-hero-title" data-ar="حلول تجارية متكاملة تحت سقف واحد" data-en="Complete trade solutions under one roof">حلول تجارية متكاملة تحت سقف واحد</h1>
+
+        <p data-ar="من الاستيراد إلى التخليص الجمركي، نغطي كل احتياجات تجارتك الدولية بخبرة وموثوقية." data-en="From import to customs clearance, we cover all your international trade needs with expertise and reliability.">من الاستيراد إلى التخليص الجمركي، نغطي كل احتياجات تجارتك الدولية بخبرة وموثوقية.</p>
+      </div>
+    </section>
+
+    <!-- ============ Services (component) ============ -->
+    <section class="tl-section tl-services" aria-labelledby="services-title">
+      <div class="tl-container">
+
+        <div class="tl-section-head tl-section-head--center">
+          <p class="tl-eyebrow" data-ar="خدماتنا" data-en="Our Services">خدماتنا</p>
+          <h2 id="services-title" data-ar="حلول تجارية متكاملة تحت سقف واحد" data-en="Complete Trade Solutions Under One Roof">حلول تجارية متكاملة تحت سقف واحد</h2>
+          <p data-ar="من الاستيراد إلى التخليص الجمركي، نغطي كل احتياجات تجارتك الدولية" data-en="From import to customs clearance, we cover all your international trade needs">من الاستيراد إلى التخليص الجمركي، نغطي كل احتياجات تجارتك الدولية</p>
+        </div>
+
+        <div class="tl-grid tl-grid--3">
+
+          <article class="tl-card tl-services__card">
+            <div class="tl-services__icon" aria-hidden="true">
+              <i class="fa-solid fa-box-open tl-icon" aria-hidden="true"></i>
+            </div>
+            <h3 data-ar="الاستيراد" data-en="Import">الاستيراد</h3>
+            <p data-ar="نستورد لك البضائع من أفضل الأسواق العالمية بأفضل الأسعار" data-en="We import goods from the world's best markets at the best prices">نستورد لك البضائع من أفضل الأسواق العالمية بأفضل الأسعار</p>
+            <a class="tl-services__link" href="services.html">
+              <span data-ar="اعرف المزيد" data-en="Learn More">اعرف المزيد</span>
+              <i class="fa-solid fa-arrow-right tl-icon tl-icon--arrow" aria-hidden="true"></i>
+            </a>
+          </article>
+
+          <article class="tl-card tl-services__card">
+            <div class="tl-services__icon" aria-hidden="true">
+              <i class="fa-solid fa-box tl-icon" aria-hidden="true"></i>
+            </div>
+            <h3 data-ar="التصدير" data-en="Export">التصدير</h3>
+            <p data-ar="نفتح لك أسواقاً جديدة ونصدر منتجاتك بثقة" data-en="We open new markets and export your products with confidence">نفتح لك أسواقاً جديدة ونصدر منتجاتك بثقة</p>
+            <a class="tl-services__link" href="services.html">
+              <span data-ar="اعرف المزيد" data-en="Learn More">اعرف المزيد</span>
+              <i class="fa-solid fa-arrow-right tl-icon tl-icon--arrow" aria-hidden="true"></i>
+            </a>
+          </article>
+
+          <article class="tl-card tl-services__card">
+            <div class="tl-services__icon" aria-hidden="true">
+              <i class="fa-solid fa-truck-fast tl-icon" aria-hidden="true"></i>
+            </div>
+            <h3 data-ar="اللوجستيات" data-en="Logistics">اللوجستيات</h3>
+            <p data-ar="حلول شحن متكاملة براً وبحراً وجواً" data-en="Complete shipping solutions by land, sea, and air">حلول شحن متكاملة براً وبحراً وجواً</p>
+            <a class="tl-services__link" href="services.html">
+              <span data-ar="اعرف المزيد" data-en="Learn More">اعرف المزيد</span>
+              <i class="fa-solid fa-arrow-right tl-icon tl-icon--arrow" aria-hidden="true"></i>
+            </a>
+          </article>
+
+          <article class="tl-card tl-services__card">
+            <div class="tl-services__icon" aria-hidden="true">
+              <i class="fa-solid fa-stamp tl-icon" aria-hidden="true"></i>
+            </div>
+            <h3 data-ar="التخليص الجمركي" data-en="Customs Clearance">التخليص الجمركي</h3>
+            <p data-ar="إجراءات جمركية سريعة ودقيقة دون تأخير" data-en="Fast and accurate customs procedures without delay">إجراءات جمركية سريعة ودقيقة دون تأخير</p>
+            <a class="tl-services__link" href="services.html">
+              <span data-ar="اعرف المزيد" data-en="Learn More">اعرف المزيد</span>
+              <i class="fa-solid fa-arrow-right tl-icon tl-icon--arrow" aria-hidden="true"></i>
+            </a>
+          </article>
+
+          <article class="tl-card tl-services__card">
+            <div class="tl-services__icon" aria-hidden="true">
+              <i class="fa-solid fa-globe tl-icon" aria-hidden="true"></i>
+            </div>
+            <h3 data-ar="توريد المصادر" data-en="Sourcing">توريد المصادر</h3>
+            <p data-ar="نربطك بأفضل الموردين والمنتجات الموثوقة" data-en="We connect you with the best suppliers and trusted products">نربطك بأفضل الموردين والمنتجات الموثوقة</p>
+            <a class="tl-services__link" href="services.html">
+              <span data-ar="اعرف المزيد" data-en="Learn More">اعرف المزيد</span>
+              <i class="fa-solid fa-arrow-right tl-icon tl-icon--arrow" aria-hidden="true"></i>
+            </a>
+          </article>
+
+          <article class="tl-card tl-services__card">
+            <div class="tl-services__icon" aria-hidden="true">
+              <i class="fa-solid fa-chart-line tl-icon" aria-hidden="true"></i>
+            </div>
+            <h3 data-ar="الاستشارات" data-en="Consulting">الاستشارات</h3>
+            <p data-ar="استشارات خبراء لتحسين سلسلة التوريد لديك" data-en="Expert consulting to optimize your supply chain">استشارات خبراء لتحسين سلسلة التوريد لديك</p>
+            <a class="tl-services__link" href="services.html">
+              <span data-ar="اعرف المزيد" data-en="Learn More">اعرف المزيد</span>
+              <i class="fa-solid fa-arrow-right tl-icon tl-icon--arrow" aria-hidden="true"></i>
+            </a>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ Process (component) ============ -->
+    <section class="tl-section tl-process" aria-labelledby="process-title">
+      <div class="tl-container">
+
+        <div class="tl-section-head tl-section-head--center">
+          <p class="tl-eyebrow" data-ar="آلية العمل" data-en="How We Work">آلية العمل</p>
+          <h2 id="process-title" data-ar="ست خطوات تفصلك عن شحنتك" data-en="Six Steps Between You and Your Shipment">ست خطوات تفصلك عن شحنتك</h2>
+          <p data-ar="عملية واضحة وشفافة من أول استفسار حتى التسليم النهائي" data-en="A clear, transparent process from first inquiry to final delivery">عملية واضحة وشفافة من أول استفسار حتى التسليم النهائي</p>
+        </div>
+
+        <div class="tl-process__layout">
+
+          <!-- Media: tall factory image + floating glass badge -->
+          <div class="tl-process__media" data-aos="fade-up">
+            <img
+              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80"
+              alt="مهندس في خط إنتاج بمصنع حديث"
+              loading="lazy"
+              width="800"
+              height="1067"
+            >
+            <span class="tl-process__badge" data-ar="منذ 2002" data-en="Since 2002">منذ 2002</span>
+          </div>
+
+          <!-- Timeline: 6 steps on a horizontal route line -->
+          <ol class="tl-process__timeline">
+
+            <li class="tl-process__step" data-aos="fade-up">
+              <span class="tl-process__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
+                  <path d="M8 12h.01"/>
+                  <path d="M12 12h.01"/>
+                  <path d="M16 12h.01"/>
+                </svg>
+                <span class="tl-process__num">01</span>
+              </span>
+              <div class="tl-process__body">
+                <h3 data-ar="الاستفسار" data-en="Inquiry">الاستفسار</h3>
+                <p data-ar="تواصل معنا باحتياجك" data-en="Tell us your requirement">تواصل معنا باحتياجك</p>
+              </div>
+            </li>
+
+            <li class="tl-process__step" data-aos="fade-up" data-aos-delay="100">
+              <span class="tl-process__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 3h10l8 8-10 10-8-8V3Z"/>
+                  <circle cx="7.5" cy="7.5" r="1.5"/>
+                </svg>
+                <span class="tl-process__num">02</span>
+              </span>
+              <div class="tl-process__body">
+                <h3 data-ar="عرض السعر" data-en="Quotation">عرض السعر</h3>
+                <p data-ar="نرسل لك عرضاً تنافسياً" data-en="We send a competitive quote">نرسل لك عرضاً تنافسياً</p>
+              </div>
+            </li>
+
+            <li class="tl-process__step" data-aos="fade-up" data-aos-delay="200">
+              <span class="tl-process__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9l-6-6Z"/>
+                  <path d="M14 3v6h6"/>
+                  <path d="m9 15 2 2 4-4"/>
+                </svg>
+                <span class="tl-process__num">03</span>
+              </span>
+              <div class="tl-process__body">
+                <h3 data-ar="التعاقد" data-en="Contract">التعاقد</h3>
+                <p data-ar="نوثق الاتفاق رسمياً" data-en="We formalize the agreement">نوثق الاتفاق رسمياً</p>
+              </div>
+            </li>
+
+            <li class="tl-process__step" data-aos="fade-up" data-aos-delay="300">
+              <span class="tl-process__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/>
+                  <path d="M17 18h1"/>
+                  <path d="M12 18h1"/>
+                  <path d="M7 18h1"/>
+                </svg>
+                <span class="tl-process__num">04</span>
+              </span>
+              <div class="tl-process__body">
+                <h3 data-ar="الإنتاج" data-en="Production">الإنتاج</h3>
+                <p data-ar="نصنع منتجك بأعلى جودة" data-en="We produce with top quality">نصنع منتجك بأعلى جودة</p>
+              </div>
+            </li>
+
+            <li class="tl-process__step" data-aos="fade-up" data-aos-delay="400">
+              <span class="tl-process__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1s1.2 1 2.5 1c2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/>
+                  <path d="M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.94 5.34 2.81 7.76"/>
+                  <path d="M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6"/>
+                  <path d="M12 10v4"/>
+                  <path d="M12 2v3"/>
+                </svg>
+                <span class="tl-process__num">05</span>
+              </span>
+              <div class="tl-process__body">
+                <h3 data-ar="الشحن" data-en="Shipping">الشحن</h3>
+                <p data-ar="نشحن لبابك أو لميناء التصدير" data-en="We ship to your door or export port">نشحن لبابك أو لميناء التصدير</p>
+              </div>
+            </li>
+
+            <li class="tl-process__step" data-aos="fade-up" data-aos-delay="500">
+              <span class="tl-process__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 8 12 3 3 8v8l9 5 9-5V8Z"/>
+                  <path d="M3 8l9 5 9-5"/>
+                  <path d="M12 13v8"/>
+                  <path d="m9.5 12.5 2 2 3.5-3.5"/>
+                </svg>
+                <span class="tl-process__num">06</span>
+              </span>
+              <div class="tl-process__body">
+                <h3 data-ar="التسليم" data-en="Delivery">التسليم</h3>
+                <p data-ar="تستلم شحنتك في الموعد" data-en="You receive on time">تستلم شحنتك في الموعد</p>
+              </div>
+            </li>
+
+          </ol>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ (component) ============ -->
+    <section class="tl-section faq" id="faq" aria-labelledby="faq-title">
+      <div class="tl-container">
+        <div class="tl-section-head tl-section-head--center">
+          <p class="tl-eyebrow" data-ar="الأسئلة الشائعة" data-en="FAQ">الأسئلة الشائعة</p>
+          <h2 id="faq-title" data-ar="كل ما تحتاج معرفته عن الشحن" data-en="Everything you need to know about shipping">كل ما تحتاج معرفته عن الشحن</h2>
+          <p data-ar="إجابات سريعة على أكثر الأسئلة شيوعًا — لم تجد سؤالك؟ تواصل معنا مباشرة." data-en="Quick answers to the most common questions — didn't find yours? Contact us directly.">إجابات سريعة على أكثر الأسئلة شيوعًا — لم تجد سؤالك؟ تواصل معنا مباشرة.</p>
+        </div>
+
+        <div class="faq__list">
+          <details class="faq__item" name="faq">
+            <summary>
+              <span data-ar="ما هي المستندات المطلوبة للاستيراد؟" data-en="What documents are required for import?">ما هي المستندات المطلوبة للاستيراد؟</span>
+              <i class="fa-solid fa-chevron-down tl-icon faq__chevron" aria-hidden="true"></i>
+            </summary>
+            <p data-ar="تشمل المستندات الأساسية: الفاتورة التجارية، قائمة الشحن، بوليصة الشحن، وشهادة المنشأ. يتولى فريقنا تجهيز وتدقيق جميع الأوراق نيابة عنك." data-en="Essential documents include: commercial invoice, packing list, bill of lading, and certificate of origin. Our team prepares and verifies all paperwork on your behalf.">تشمل المستندات الأساسية: الفاتورة التجارية، قائمة الشحن، بوليصة الشحن، وشهادة المنشأ. يتولى فريقنا تجهيز وتدقيق جميع الأوراق نيابة عنك.</p>
+          </details>
+
+          <details class="faq__item" name="faq">
+            <summary>
+              <span data-ar="كم تستغرق مدة الشحن؟" data-en="How long does shipping take?">كم تستغرق مدة الشحن؟</span>
+              <i class="fa-solid fa-chevron-down tl-icon faq__chevron" aria-hidden="true"></i>
+            </summary>
+            <p data-ar="تتراوح مدة الشحن البحري من 15 إلى 40 يومًا حسب الوجهة، بينما يستغرق الشحن الجوي من 3 إلى 7 أيام. نقدم لك تتبعًا لحظيًا لشحنتك." data-en="Sea freight takes 15–40 days depending on the destination, while air freight takes 3–7 days. We provide real-time tracking for your shipment.">تتراوح مدة الشحن البحري من 15 إلى 40 يومًا حسب الوجهة، بينما يستغرق الشحن الجوي من 3 إلى 7 أيام. نقدم لك تتبعًا لحظيًا لشحنتك.</p>
+          </details>
+
+          <details class="faq__item" name="faq">
+            <summary>
+              <span data-ar="هل تتولون التخليص الجمركي؟" data-en="Do you handle customs clearance?">هل تتولون التخليص الجمركي؟</span>
+              <i class="fa-solid fa-chevron-down tl-icon faq__chevron" aria-hidden="true"></i>
+            </summary>
+            <p data-ar="نعم، نقدم خدمة التخليص الجمركي الكاملة في جميع الموانئ والمطارات المصرية، بما في ذلك الإعفاءات والرسوم." data-en="Yes, we provide full customs clearance at all Egyptian ports and airports, including exemptions and duties.">نعم، نقدم خدمة التخليص الجمركي الكاملة في جميع الموانئ والمطارات المصرية، بما في ذلك الإعفاءات والرسوم.</p>
+          </details>
+
+          <details class="faq__item" name="faq">
+            <summary>
+              <span data-ar="ما هو الحد الأدنى للطلب؟" data-en="What is the minimum order?">ما هو الحد الأدنى للطلب؟</span>
+              <i class="fa-solid fa-chevron-down tl-icon faq__chevron" aria-hidden="true"></i>
+            </summary>
+            <p data-ar="لا يوجد حد أدنى للشحنات الجوية، بينما يبدأ الشحن البحري من حاوية 20 قدمًا. تواصل معنا للحصول على عرض سعر مخصص." data-en="There is no minimum for air shipments, while sea freight starts from a 20-foot container. Contact us for a custom quotation.">لا يوجد حد أدنى للشحنات الجوية، بينما يبدأ الشحن البحري من حاوية 20 قدمًا. تواصل معنا للحصول على عرض سعر مخصص.</p>
+          </details>
+
+          <details class="faq__item" name="faq">
+            <summary>
+              <span data-ar="كيف أحصل على عرض سعر؟" data-en="How do I get a quotation?">كيف أحصل على عرض سعر؟</span>
+              <i class="fa-solid fa-chevron-down tl-icon faq__chevron" aria-hidden="true"></i>
+            </summary>
+            <p data-ar="أرسل لنا تفاصيل شحنتك عبر نموذج التواصل أو واتساب، وسنعود إليك بعرض سعر خلال 24 ساعة." data-en="Send us your shipment details via the contact form or WhatsApp, and we will get back to you with a quotation within 24 hours.">أرسل لنا تفاصيل شحنتك عبر نموذج التواصل أو واتساب، وسنعود إليك بعرض سعر خلال 24 ساعة.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA (component) ============ -->
+    <section class="cta" aria-labelledby="cta-title">
+      <div class="tl-container cta__inner">
+        <h2 id="cta-title" data-ar="جاهزون لشحن بضاعتك إلى أي مكان في العالم؟" data-en="Ready to ship your goods anywhere in the world?">جاهزون لشحن بضاعتك إلى أي مكان في العالم؟</h2>
+        <p data-ar="احصل على عرض سعر تنافسي خلال 24 ساعة — فريقنا يرد على استفساراتك في أي وقت." data-en="Get a competitive quotation within 24 hours — our team responds to your inquiries anytime.">احصل على عرض سعر تنافسي خلال 24 ساعة — فريقنا يرد على استفساراتك في أي وقت.</p>
+        <a class="tl-btn tl-btn--primary" href="contact.html" data-ar="تواصل معنا الآن" data-en="Contact Us Now">تواصل معنا الآن</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ Footer (component) ============ -->
+  <footer class="tl-footer">
+    <div class="tl-container">
+
+      <div class="tl-grid tl-grid--4 tl-footer__grid">
+
+        <!-- Column 1: Brand + Newsletter -->
+        <div class="tl-footer__col">
+          <a class="tl-footer__brand" href="index.html" aria-label="TRADE LINE">
+            <span class="tl-footer__logo-chip">
+              <img class="tl-footer__logo" src="../../assets/logo/00.png" alt="TRADE LINE" width="167" height="30">
+            </span>
+          </a>
+          <p class="tl-footer__blurb" data-ar="شريكك الموثوق في الاستيراد والتصدير والخدمات اللوجستية حول العالم." data-en="Your trusted partner for import, export, logistics and customs services worldwide.">شريكك الموثوق في الاستيراد والتصدير والخدمات اللوجستية حول العالم.</p>
+
+          <!-- Newsletter -->
+          <div class="tl-footer__newsletter">
+            <h3 class="tl-footer__newsletter-title" data-ar="النشرة البريدية" data-en="Newsletter">النشرة البريدية</h3>
+            <p class="tl-footer__newsletter-text" data-ar="اشترك ليصلك جديد العروض وأخبار الشحن." data-en="Subscribe to receive offers and shipping news.">اشترك ليصلك جديد العروض وأخبار الشحن.</p>
+            <form class="tl-footer__newsletter-form" data-newsletter novalidate>
+              <label class="tl-visually-hidden" for="footer-newsletter-email" data-ar="البريد الإلكتروني" data-en="Email address">البريد الإلكتروني</label>
+              <input id="footer-newsletter-email" type="email" required placeholder="name@example.com" autocomplete="email">
+              <button class="tl-footer__newsletter-btn" type="submit" aria-label="Subscribe">
+                <i class="fa-solid fa-paper-plane tl-icon" aria-hidden="true"></i>
+              </button>
+            </form>
+            <p class="tl-footer__newsletter-success" data-newsletter-success hidden data-ar="تم الاشتراك بنجاح!" data-en="Subscribed successfully!">تم الاشتراك بنجاح!</p>
+          </div>
+
+          <!-- TODO: replace href="#" with real social profile URLs -->
+          <ul class="tl-footer__social">
+            <li>
+              <a href="#" aria-label="LinkedIn">
+                  <i class="fa-brands fa-linkedin-in tl-icon" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" aria-label="Facebook">
+                  <i class="fa-brands fa-facebook-f tl-icon" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" aria-label="X">
+                  <i class="fa-brands fa-x-twitter tl-icon" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 2: Quick links -->
+        <div class="tl-footer__col">
+          <h3 class="tl-footer__title" data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h3>
+          <ul class="tl-footer__list">
+            <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+            <li><a href="about.html" data-ar="من نحن" data-en="About">من نحن</a></li>
+            <li><a href="services.html" data-ar="خدماتنا" data-en="Services">خدماتنا</a></li>
+            <li><a href="contact.html" data-ar="تواصل" data-en="Contact">تواصل</a></li>
+            <li><a href="blog.html" data-ar="المدونة" data-en="Blog">المدونة</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Services -->
+        <div class="tl-footer__col">
+          <h3 class="tl-footer__title" data-ar="خدماتنا" data-en="Our Services">خدماتنا</h3>
+          <ul class="tl-footer__list">
+            <li><a href="services.html" data-ar="الاستيراد" data-en="Import">الاستيراد</a></li>
+            <li><a href="services.html" data-ar="التصدير" data-en="Export">التصدير</a></li>
+            <li><a href="services.html" data-ar="الخدمات اللوجستية" data-en="Logistics">الخدمات اللوجستية</a></li>
+            <li><a href="services.html" data-ar="التخليص الجمركي" data-en="Customs Clearance">التخليص الجمركي</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact -->
+        <div class="tl-footer__col">
+          <h3 class="tl-footer__title" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h3>
+          <!-- TODO: replace with real contact details -->
+          <ul class="tl-footer__contact">
+            <li>
+              <i class="fa-solid fa-location-dot tl-icon" aria-hidden="true"></i>
+              <span data-ar="القاهرة، مصر" data-en="Cairo, Egypt">القاهرة، مصر</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone tl-icon" aria-hidden="true"></i>
+              <span data-ar="+20 100 000 0000" data-en="+20 100 000 0000">+20 100 000 0000</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope tl-icon" aria-hidden="true"></i>
+              <span data-ar="info@tradeline.com" data-en="info@tradeline.com">info@tradeline.com</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-clock tl-icon" aria-hidden="true"></i>
+              <span data-ar="السبت - الخميس: 9ص - 6م" data-en="Sat - Thu: 9AM - 6PM">السبت - الخميس: 9ص - 6م</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="tl-footer__bottom">
+        <p class="tl-footer__copy">
+          © <span data-year></span>
+          <span data-ar="ترايد لاين" data-en="TRADE LINE">ترايد لاين</span>
+        </p>
+        <ul class="tl-footer__legal">
+          <li><a href="#" data-ar="سياسة الخصوصية" data-en="Privacy Policy">سياسة الخصوصية</a></li>
+          <li><a href="#" data-ar="الشروط والأحكام" data-en="Terms of Service">الشروط والأحكام</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ============ WhatsApp float (component: components/whatsapp/whatsapp.html) ============ -->
+  <a class="tl-whatsapp" href="https://wa.me/" target="_blank" rel="noopener" data-whatsapp aria-label="WhatsApp">
+    <svg class="tl-whatsapp__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 3.5a8.5 8.5 0 0 0-7.3 12.8L3.5 20.5l4.3-1.1A8.5 8.5 0 1 0 12 3.5Z"/>
+      <path d="M9.3 8.6l1.2 1.2c.3.3.3.8 0 1.1l-.6.6c.5.9 1.2 1.6 2.1 2.1l.6-.6c.3-.3.8-.3 1.1 0l1.2 1.2c.3.3.3.8 0 1.1l-.8.8c-.4.4-1 .5-1.5.3-2.9-.9-5.2-3.2-6.1-6.1-.2-.5-.1-1.1.3-1.5l.8-.8c.3-.3.8-.3 1.1 0Z"/>
+    </svg>
+  </a>
+
+  <!-- Scripts (deferred) -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="components/header/header.js" defer></script>
+  <script src="components/footer/footer.js" defer></script>
+</body>
+</html>

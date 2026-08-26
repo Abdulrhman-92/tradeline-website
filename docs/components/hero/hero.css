@@ -1,0 +1,364 @@
+/* ============================================================
+   TRADE LINE — Hero (v2.0)
+   Cinematic industrial luxury: full-viewport background image
+   with multi-layer scrims, drifting glow orbs, blueprint grid,
+   massive gradient-accent headline, glass stats panel, and a
+   scroll indicator. All values reference tokens.css.
+   Logical properties only — RTL mirrors via dir + logical props.
+   ============================================================ */
+
+/* ---------- Section ---------- */
+.tl-hero {
+  position: relative;
+  isolation: isolate; /* negative z-index layers stay under content */
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg);
+  overflow: clip;
+  padding-block-start: calc(var(--header-h) + var(--space-6));
+  padding-block-end: var(--space-6);
+}
+
+/* ---------- Cinematic background ---------- */
+.tl-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+/* Bleeds 10% past top/bottom so the parallax translate (hero.js)
+   never reveals an edge while scrolling. */
+.tl-hero__parallax {
+  position: absolute;
+  inset-block: -10%;
+  inset-inline: 0;
+  will-change: transform;
+}
+
+.tl-hero__bg-img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  animation: tl-kenburns 24s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* Multi-layer scrims — bottom grounding, side legibility,
+   overall darkening. */
+.tl-hero__scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.tl-hero__scrim--bottom {
+  background: linear-gradient(to top, var(--color-bg) 0%, transparent 60%);
+}
+
+.tl-hero__scrim--side {
+  background: linear-gradient(to inline-end, var(--color-bg) 0%, transparent 70%);
+}
+
+.tl-hero__scrim--dark {
+  background: color-mix(in srgb, var(--color-bg) 45%, transparent);
+}
+
+/* ---------- Glow orbs ---------- */
+.tl-hero__orb {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--color-glow), transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  animation: tl-orb-drift 28s ease-in-out infinite;
+  will-change: transform;
+}
+
+.tl-hero__orb--one {
+  inset-block-start: -10vmax;
+  inset-inline-end: -8vmax;
+  inline-size: 55vmax;
+  block-size: 55vmax;
+}
+
+.tl-hero__orb--two {
+  inset-block-end: -12vmax;
+  inset-inline-start: -10vmax;
+  inline-size: 48vmax;
+  block-size: 48vmax;
+  animation-duration: 34s;
+  animation-delay: -8s;
+}
+
+.tl-hero__orb--three {
+  inset-block-start: 30%;
+  inset-inline-start: 35%;
+  inline-size: 34vmax;
+  block-size: 34vmax;
+  animation-duration: 42s;
+  animation-delay: -16s;
+  opacity: 0.7;
+}
+
+/* ---------- Layout ---------- */
+.tl-hero__inner {
+  inline-size: 100%;
+  margin-block: auto; /* vertical centering, safe when content overflows */
+}
+
+.tl-hero__content {
+  display: grid;
+  gap: var(--space-5);
+  align-content: center;
+  max-inline-size: var(--section-head-max); /* 40rem content column */
+}
+
+/* Badge is a grid item — keep it pill-shaped, not stretched */
+.tl-hero__content .tl-badge {
+  justify-self: start;
+  /* High-contrast badge: solid dark surface + orange text so it
+     stays readable over the cinematic background image */
+  background-color: color-mix(in srgb, var(--color-bg) 78%, transparent);
+  color: var(--color-accent-light);
+  border-color: color-mix(in srgb, var(--color-accent) 45%, transparent);
+  backdrop-filter: blur(var(--blur-header));
+  -webkit-backdrop-filter: blur(var(--blur-header));
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---------- Headline ---------- */
+/* Task-mandated exception to base.css heading scale: cinematic H1. */
+.tl-hero__title {
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+/* Tight display tracking for Latin only — Arabic never gets it */
+html[lang="en"] .tl-hero__title {
+  letter-spacing: -0.02em;
+}
+
+.tl-hero__accent {
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 var(--space-6) color-mix(in srgb, var(--color-accent) 35%, transparent));
+}
+
+.tl-hero__lead {
+  color: var(--color-text-muted);
+  font-size: var(--fs-md);
+  max-inline-size: min(30rem, 100%); /* 480px — task-specified lead width */
+}
+
+/* ---------- Actions ---------- */
+.tl-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.tl-hero__cta {
+  transition:
+    transform var(--transition-fast),
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.tl-hero__cta--primary:hover {
+  transform: scale(1.04);
+}
+
+/* Glass outline CTA — translucent surface + backdrop blur */
+.tl-hero__cta--glass {
+  background-color: color-mix(in srgb, var(--color-surface) 30%, transparent);
+  backdrop-filter: blur(var(--blur-header));
+  -webkit-backdrop-filter: blur(var(--blur-header));
+}
+
+/* ---------- Trust row ---------- */
+.tl-hero__trust {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3) var(--space-4);
+  list-style: none;
+  margin-block-start: var(--space-2);
+}
+
+.tl-hero__trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+/* Dot separators between trust items */
+.tl-hero__trust-item + .tl-hero__trust-item::before {
+  content: "";
+  inline-size: var(--space-1);
+  block-size: var(--space-1);
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  margin-inline-end: var(--space-4);
+}
+
+.tl-hero__trust-icon {
+  inline-size: var(--fs-md);
+  block-size: var(--fs-md);
+  color: var(--color-accent);
+}
+
+/* ---------- Glass stats panel ---------- */
+.tl-hero__stats-wrap {
+  margin-block-start: var(--space-8);
+}
+
+.tl-hero__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+  padding-block: var(--space-6);
+  padding-inline: var(--space-6);
+  background-color: color-mix(in srgb, var(--color-surface) 70%, transparent);
+  border: var(--border-thin);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(var(--blur-header));
+  -webkit-backdrop-filter: blur(var(--blur-header));
+  box-shadow: var(--shadow-md);
+}
+
+.tl-hero__stat {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.tl-hero__stat + .tl-hero__stat {
+  padding-inline-start: var(--space-6);
+  border-inline-start: var(--border-thin);
+}
+
+.tl-hero__stat-num {
+  font-family: var(--font-english);
+  font-size: var(--fs-3xl);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-accent);
+}
+
+.tl-hero__stat-label {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+/* ---------- Scroll indicator ---------- */
+.tl-hero__scroll {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  margin-block-start: var(--space-5);
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.tl-hero__scroll:hover {
+  color: var(--color-accent);
+}
+
+.tl-hero__scroll-icon {
+  inline-size: var(--fs-2xl);
+  block-size: var(--fs-2xl);
+  animation: tl-scroll-hint 2.2s ease-in-out infinite;
+}
+
+/* ---------- Animations ---------- */
+@keyframes tl-kenburns {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
+
+@keyframes tl-orb-drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  33% { transform: translate3d(4vmax, -3vmax, 0) scale(1.1); }
+  66% { transform: translate3d(-3vmax, 2vmax, 0) scale(0.92); }
+}
+
+@keyframes tl-hero-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.55); }
+}
+
+@keyframes tl-scroll-hint {
+  0%, 100% { transform: translateY(0); opacity: 0.9; }
+  50% { transform: translateY(var(--space-2)); opacity: 0.4; }
+}
+
+@keyframes tl-rise {
+  from { opacity: 0; transform: translateY(var(--space-5)); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Staggered fade-up on load — hero is above the fold, no AOS */
+.tl-hero__content > * {
+  animation: tl-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.tl-hero__content > *:nth-child(2) { animation-delay: 0.12s; }
+.tl-hero__content > *:nth-child(3) { animation-delay: 0.24s; }
+.tl-hero__content > *:nth-child(4) { animation-delay: 0.36s; }
+.tl-hero__content > *:nth-child(5) { animation-delay: 0.48s; }
+
+.tl-hero__stats-wrap {
+  animation: tl-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both;
+}
+
+.tl-hero__scroll {
+  animation: tl-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.72s both;
+}
+
+.tl-hero__badge-dot {
+  inline-size: var(--space-2);
+  block-size: var(--space-2);
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  animation: tl-hero-pulse 2s ease-in-out infinite;
+}
+
+/* Pause ALL hero animations while off-screen (hero.js) */
+.tl-hero.is-paused *,
+.tl-hero.is-paused *::before,
+.tl-hero.is-paused *::after {
+  animation-play-state: paused;
+}
+
+/* ---------- Mobile ---------- */
+/* Breakpoint mirrors --bp-mobile-max (63.99rem) from tokens.css */
+@media (max-width: 63.99rem) {
+  .tl-hero__stats {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: var(--space-5);
+  }
+
+  /* Row-start stat drops its divider */
+  .tl-hero__stat:nth-child(3) {
+    padding-inline-start: 0;
+    border-inline-start: 0;
+  }
+
+  /* Smaller, cheaper orbs on mobile */
+  .tl-hero__orb {
+    filter: blur(60px);
+  }
+
+  .tl-hero__orb--three {
+    display: none;
+  }
+}

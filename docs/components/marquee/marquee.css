@@ -1,0 +1,61 @@
+/* ============================================================
+   TRADE LINE — Marquee (v1)
+   Infinite destination marquee with edge fade mask.
+   All values reference tokens.css. Logical properties only.
+   ============================================================ */
+
+.tl-marquee {
+  position: relative;
+  margin-top: 50px;
+  overflow: clip;
+  background-color: var(--color-surface);
+  border-block: var(--border-thin);
+  padding-block: var(--space-5);
+  /* Edge fade — any opaque token color works as a mask alpha source */
+  mask-image: linear-gradient(90deg, transparent, var(--color-text) 8%, var(--color-text) 92%, transparent);
+}
+
+.tl-marquee__track {
+  display: flex;
+  inline-size: max-content;
+  animation: tl-marquee-scroll 30s linear infinite;
+}
+
+.tl-marquee__list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding-inline-end: var(--space-6); /* matches the gap -> seamless -50% loop */
+  flex-shrink: 0;
+  list-style: none;
+}
+
+.tl-marquee__item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-6);
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.tl-marquee__sep {
+  inline-size: var(--space-2);
+  block-size: var(--space-2);
+  flex-shrink: 0;
+}
+
+.tl-marquee__sep circle {
+  fill: var(--color-accent);
+}
+
+/* Reduced motion — toggled by marquee.js */
+.tl-marquee.no-anim .tl-marquee__track {
+  animation: none;
+}
+
+@keyframes tl-marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); } /* one list width = seamless loop */
+}

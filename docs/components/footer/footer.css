@@ -1,0 +1,262 @@
+/* ============================================================
+   TRADE LINE — Footer Component (v1)
+   4-column footer + bottom bar.
+   All values reference tokens.css. Logical properties only.
+   ============================================================ */
+
+.tl-footer {
+  background-color: var(--color-bg);
+  border-block-start: var(--border-thin);
+  padding-block-start: var(--space-8);
+}
+
+.tl-footer__col {
+  display: grid;
+  align-content: start;
+  gap: var(--space-4);
+}
+
+/* ---------- Brand ---------- */
+.tl-footer__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-text);
+}
+
+/* White chip — same treatment as the header so the black logo
+   stays clearly visible on the dark footer */
+.tl-footer__logo-chip {
+  display: inline-flex;
+  align-items: center;
+  padding-block: var(--space-3);
+  padding-inline: var(--space-3);
+  background-color: var(--color-text);
+  border-radius: var(--radius-md);
+  box-shadow:
+    var(--shadow-sm),
+    0 0 0 1px color-mix(in srgb, var(--color-text) 25%, transparent);
+  transition: box-shadow var(--transition-fast);
+}
+
+.tl-footer__brand:hover .tl-footer__logo-chip {
+  box-shadow:
+    var(--shadow-md),
+    0 0 0 1px color-mix(in srgb, var(--color-text) 40%, transparent);
+}
+
+.tl-footer__logo {
+  block-size: var(--logo-h);
+  inline-size: auto;
+}
+
+.tl-footer__wordmark {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  letter-spacing: var(--track-wide);
+}
+
+.tl-footer__blurb {
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-loose);
+}
+
+/* ---------- Newsletter ---------- */
+.tl-footer__newsletter {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  background-color: var(--color-surface);
+  border: var(--border-thin);
+  border-radius: var(--radius-md);
+}
+
+.tl-footer__newsletter-title {
+  font-size: var(--fs-md);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.tl-footer__newsletter-text {
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-base);
+}
+
+.tl-footer__newsletter-form {
+  display: flex;
+  gap: var(--space-2);
+  margin-block-start: var(--space-2);
+}
+
+.tl-footer__newsletter-form input {
+  flex: 1;
+  min-inline-size: 0;
+  padding-block: var(--space-2);
+  padding-inline: var(--space-3);
+  background-color: var(--color-bg);
+  border: var(--border-thin);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  font-size: var(--fs-sm);
+  transition: border-color var(--transition-fast);
+}
+
+.tl-footer__newsletter-form input::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.7;
+}
+
+.tl-footer__newsletter-form input:focus-visible {
+  border-color: var(--color-accent);
+  outline: none;
+}
+
+.tl-footer__newsletter-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--space-7);
+  block-size: var(--space-7);
+  flex-shrink: 0;
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.tl-footer__newsletter-btn:hover {
+  background-color: var(--color-accent-light);
+  box-shadow: var(--shadow-glow);
+}
+
+.tl-footer__newsletter-success {
+  font-size: var(--fs-sm);
+  color: var(--color-accent);
+}
+
+/* ---------- Social ---------- */
+.tl-footer__social {
+  display: flex;
+  gap: var(--space-3);
+  list-style: none;
+}
+
+.tl-footer__social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--space-7);
+  block-size: var(--space-7);
+  background-color: var(--color-surface);
+  border: var(--border-thin);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  transition:
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.tl-footer__social a:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  background-color: var(--color-glow);
+}
+
+.tl-footer__social .tl-icon {
+  inline-size: var(--fs-md);
+  block-size: var(--fs-md);
+}
+
+/* ---------- Column titles & links ---------- */
+.tl-footer__title {
+  margin-block-end: var(--space-2);
+  color: var(--color-text);
+}
+
+.tl-footer__list {
+  display: grid;
+  gap: var(--space-3);
+  list-style: none;
+}
+
+.tl-footer__list a {
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+}
+
+.tl-footer__list a:hover {
+  color: var(--color-accent);
+}
+
+/* ---------- Contact ---------- */
+.tl-footer__contact {
+  display: grid;
+  gap: var(--space-3);
+  list-style: none;
+}
+
+.tl-footer__contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+}
+
+.tl-footer__contact .tl-icon {
+  flex-shrink: 0;
+  margin-block-start: var(--space-1);
+  color: var(--color-accent);
+}
+
+/* ---------- Bottom bar ---------- */
+.tl-footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-block: var(--space-5);
+  margin-block-start: var(--space-7);
+  border-block-start: var(--border-thin);
+}
+
+.tl-footer__copy {
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+}
+
+.tl-footer__legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+  list-style: none;
+}
+
+.tl-footer__legal a {
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+}
+
+.tl-footer__legal a:hover {
+  color: var(--color-accent);
+}
+
+/* ---------- Icons ---------- */
+.tl-icon {
+  inline-size: 1.25em;
+  block-size: 1.25em;
+  stroke: currentColor;
+  stroke-width: var(--stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}

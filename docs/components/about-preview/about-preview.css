@@ -1,0 +1,77 @@
+/* ============================================================
+   TRADE LINE — About Preview (v1)
+   Two-column intro: offset accent frame + bilingual copy.
+   All values reference tokens.css. Logical properties only.
+   ============================================================ */
+
+.tl-about-preview__grid {
+  gap: var(--space-7);
+  align-items: start;
+}
+
+/* ---------- Media + offset accent frame ---------- */
+.tl-about-preview__media {
+  position: relative;
+}
+
+/* Same-size frame shifted toward block-start + inline-start */
+.tl-about-preview__media::before {
+  content: "";
+  position: absolute;
+  inset-block-start: calc(var(--space-5) * -1);
+  inset-inline-start: calc(var(--space-5) * -1);
+  inset-block-end: var(--space-5);
+  inset-inline-end: var(--space-5);
+  border: var(--border-accent);
+  border-radius: var(--radius-md);
+  z-index: -1;
+}
+
+.tl-about-preview__media img {
+  inline-size: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+/* ---------- Content ---------- */
+.tl-about-preview__content {
+  display: grid;
+  justify-items: start;
+}
+
+.tl-about-preview .tl-section-head {
+  margin-block-end: var(--space-5);
+}
+
+/* ---------- Features ---------- */
+.tl-about-preview__features {
+  list-style: none;
+  display: grid;
+  gap: var(--space-3);
+  margin-block: var(--space-6);
+}
+
+.tl-about-preview__features li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.tl-about-preview__features svg {
+  flex-shrink: 0;
+  inline-size: var(--space-5);
+  block-size: var(--space-5);
+  color: var(--color-accent);
+}
+
+/* ---------- Button arrow (points inline-end) ---------- */
+.tl-about-preview .tl-btn svg {
+  inline-size: var(--space-4);
+  block-size: var(--space-4);
+}
+
+[dir="rtl"] .tl-about-preview .tl-btn svg {
+  transform: scaleX(-1);
+}

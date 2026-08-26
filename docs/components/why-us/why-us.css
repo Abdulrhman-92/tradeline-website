@@ -1,0 +1,37 @@
+/* ============================================================
+   TRADE LINE — Why Us (v1)
+   All values reference tokens.css. Logical properties only.
+   ============================================================ */
+
+.tl-why-us__card {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.tl-why-us__card p {
+  color: var(--color-text-muted);
+}
+
+.tl-why-us__icon {
+  display: grid;
+  place-items: center;
+  inline-size: var(--space-8);
+  block-size: var(--space-8);
+  margin-block-end: var(--space-2);
+  border-radius: 50%;
+  background-color: var(--color-glow);
+  border: var(--border-thin);
+  box-shadow: var(--shadow-glow);
+}
+
+.tl-why-us__icon svg {
+  inline-size: var(--space-6);
+  block-size: var(--space-6);
+  color: var(--color-accent);
+  stroke-width: var(--stroke);
+}
+
+/* Shared section-head subtitle (utilities.css has no sub style) */
+.tl-section-head__sub {
+  color: var(--color-text-muted);
+}

@@ -1,0 +1,106 @@
+/* ============================================================
+   TRADE LINE — Products (v2)
+   Premium image cards: title + short description + circular
+   arrow button + product image at the card bottom.
+   Reference: profileclinic.xbees.net (image card layout).
+   All values reference tokens.css. Logical properties only.
+   ============================================================ */
+
+.tl-products .tl-section-head > p:last-child {
+  color: var(--color-text-muted);
+}
+
+/* ---------- Card ---------- */
+.tl-products__card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0; /* image is flush to the card bottom */
+}
+
+/* ---------- Card body ---------- */
+.tl-products__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: var(--space-6);
+}
+
+.tl-products__body h3 {
+  margin-block-end: var(--space-2);
+  font-size: var(--fs-md);
+  transition: color var(--transition-base);
+}
+
+.tl-products__card:hover h3 {
+  color: var(--color-accent-light);
+}
+
+.tl-products__body p {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+/* ---------- Circular arrow button ---------- */
+.tl-products__arrow {
+  display: grid;
+  place-items: center;
+  align-self: flex-start;
+  inline-size: var(--space-7);
+  block-size: var(--space-7);
+  margin-block-start: auto; /* pins the button to the body bottom */
+  border-radius: 50%; /* circle shape — not a radius token */
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+  color: var(--color-bg);
+  text-decoration: none;
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.tl-products__arrow i {
+  font-size: var(--fs-base);
+  line-height: 1;
+}
+
+.tl-products__arrow:hover {
+  transform: scale(1.08);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Arrow always points "forward" — flip in RTL */
+html[dir="rtl"] .tl-products__arrow i {
+  transform: scaleX(-1);
+}
+
+/* ---------- Product image ---------- */
+.tl-products__img {
+  aspect-ratio: 4 / 3;
+  border-block-start: var(--border-thin);
+  overflow: hidden;
+}
+
+.tl-products__img img {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  transition: transform var(--transition-base);
+}
+
+.tl-products__card:hover .tl-products__img img {
+  transform: scale(1.05);
+}
+
+/* ---------- Catalog CTA ---------- */
+.tl-products__cta {
+  display: flex;
+  justify-content: center;
+  margin-block-start: var(--space-7);
+}
+
+.tl-products__cta svg {
+  inline-size: var(--space-4);
+  block-size: var(--space-4);
+}

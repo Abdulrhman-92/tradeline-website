@@ -1,0 +1,98 @@
+<!-- ============================================================
+     TRADE LINE — Marquee (v1)
+     Infinite destination marquee. The list is duplicated for a
+     seamless CSS loop; the copy is aria-hidden. Edge fade mask.
+     ============================================================ -->
+<div class="tl-marquee" role="region" aria-labelledby="marquee-title">
+  <span id="marquee-title" class="tl-visually-hidden" data-ar="وجهاتنا حول العالم" data-en="Our global destinations">وجهاتنا حول العالم</span>
+
+  <div class="tl-marquee__track">
+    <ul class="tl-marquee__list">
+      <li class="tl-marquee__item">
+        <span data-ar="القاهرة" data-en="Cairo">القاهرة</span>
+        <svg class="tl-marquee__sep" viewBox="0 0 8 8" aria-hidden="true" focusable="false"><circle cx="4" cy="4" r="2.5"></circle></svg>
+      </li>
+      <li class="tl-marquee__item">
+        <span data-ar="دبي" data-en="Dubai">دبي</span>
+        <svg class="tl-marquee__sep" viewBox="0 0 8 8" aria-hidden="true" focusable="false"><circle cx="4" cy="4" r="2.5"></circle></svg>
+      </li>
+      <li class="tl-marquee__item">
+        <span data-ar="جدة" data-en="Jeddah">جدة</span>
+        <svg class="tl-marquee__sep" viewBox="0 0 8 8" aria-hidden="true" focusable="false"><circle cx="4" cy="4" r="2.5"></circle></svg>
+      </li>
+      <li class="tl-marquee__item">
+        <span data-ar="شنغهاي" data-en="Shanghai">شنغهاي</span>
+        <svg class="tl-marquee__sep" viewBox="0 0 8 8" aria-hidden="true" focusable="false"><circle cx="4" cy="4" r="2.5"></circle></svg>
+      </li>
+      <li class="tl-marquee__item">
+        <span data-ar="هامبورغ" data-en="Hamburg">هامبورغ</span>
+        <svg class="tl-marquee__sep" viewBox="0 0 8 8" aria-hidden="true" focusable="false"><circle cx="4" cy="4" r="2.5"></circle></svg>
+      </li>
+      <li class="tl-marquee__item">
+        <span data-ar="روتردام" data-en="Rotterdam">روتردام</span>
+        <svg class="tl-marquee__sep" viewBox="0 0 8 8" aria-hidden="true" focusable="false"><circle cx="4" cy="4" r="2.5"></circle></svg>
+      </li>
+      <li class="tl-marquee__item">
+        <span data-ar="نيويورك" data-en="New York">نيويورك</span>
+        <svg class="tl-marquee__sep" viewBox="0 0 8 8" aria-hidden="true" focusable="false"><circle cx="4" cy="4" r="2.5"></circle></svg>
+      </li>
+      <li class="tl-marquee__item">
+        <span data-ar="سنغافورة" data-en="Singapore">سنغافورة</span>
+        <svg class="tl-marquee__sep" viewBox="0 0 8 8" aria-hidden="true" focusable="false"><circle cx="4" cy="4" r="2.5"></circle></svg>
+      </li>
+      <li class="tl-marquee__item">
+        <span data-ar="إسطنبول" data-en="Istanbul">إسطنبول</span>
+        <svg class="tl-marquee__sep" viewBox="0 0 8 8" aria-hidden="true" focusable="false"><circle cx="4" cy="4" r="2.5"></circle></svg>
+      </li>
+      <li class="tl-marquee__item">
+        <span data-ar="مومباي" data-en="Mumbai">مومباي</span>
+        <svg class="tl-marquee__sep" viewBox="0 0 8 8" aria-hidden="true" focusable="false"><circle cx="4" cy="4" r="2.5"></circle></svg>
+      </li>
+    </ul>
+
+    <!-- Duplicate for the seamless loop — same data attrs so the
+         language switcher keeps both copies in sync -->
+    <ul class="tl-marquee__list" aria-hidden="true">
+      <li class="tl-marquee__item">
+        <span data-ar="القاهرة" data-en="Cairo">القاهرة</span>
+        <svg class="tl-marquee__sep" viewBox="0 0 8 8" aria-hidden="true" focusable="false"><circle cx="4" cy="4" r="2.5"></circle></svg>
+      </li>
+      <li class="tl-marquee__item">
+        <span data-ar="دبي" data-en="Dubai">دبي</span>
+        <svg class="tl-marquee__sep" viewBox="0 0 8 8" aria-hidden="true" focusable="false"><circle cx="4" cy="4" r="2.5"></circle></svg>
+      </li>
+      <li class="tl-marquee__item">
+        <span data-ar="جدة" data-en="Jeddah">جدة</span>
+        <svg class="tl-marquee__sep" viewBox="0 0 8 8" aria-hidden="true" focusable="false"><circle cx="4" cy="4" r="2.5"></circle></svg>
+      </li>
+      <li class="tl-marquee__item">
+        <span data-ar="شنغهاي" data-en="Shanghai">شنغهاي</span>
+        <svg class="tl-marquee__sep" viewBox="0 0 8 8" aria-hidden="true" focusable="false"><circle cx="4" cy="4" r="2.5"></circle></svg>
+      </li>
+      <li class="tl-marquee__item">
+        <span data-ar="هامبورغ" data-en="Hamburg">هامبورغ</span>
+        <svg class="tl-marquee__sep" viewBox="0 0 8 8" aria-hidden="true" focusable="false"><circle cx="4" cy="4" r="2.5"></circle></svg>
+      </li>
+      <li class="tl-marquee__item">
+        <span data-ar="روتردام" data-en="Rotterdam">روتردام</span>
+        <svg class="tl-marquee__sep" viewBox="0 0 8 8" aria-hidden="true" focusable="false"><circle cx="4" cy="4" r="2.5"></circle></svg>
+      </li>
+      <li class="tl-marquee__item">
+        <span data-ar="نيويورك" data-en="New York">نيويورك</span>
+        <svg class="tl-marquee__sep" viewBox="0 0 8 8" aria-hidden="true" focusable="false"><circle cx="4" cy="4" r="2.5"></circle></svg>
+      </li>
+      <li class="tl-marquee__item">
+        <span data-ar="سنغافورة" data-en="Singapore">سنغافورة</span>
+        <svg class="tl-marquee__sep" viewBox="0 0 8 8" aria-hidden="true" focusable="false"><circle cx="4" cy="4" r="2.5"></circle></svg>
+      </li>
+      <li class="tl-marquee__item">
+        <span data-ar="إسطنبول" data-en="Istanbul">إسطنبول</span>
+        <svg class="tl-marquee__sep" viewBox="0 0 8 8" aria-hidden="true" focusable="false"><circle cx="4" cy="4" r="2.5"></circle></svg>
+      </li>
+      <li class="tl-marquee__item">
+        <span data-ar="مومباي" data-en="Mumbai">مومباي</span>
+        <svg class="tl-marquee__sep" viewBox="0 0 8 8" aria-hidden="true" focusable="false"><circle cx="4" cy="4" r="2.5"></circle></svg>
+      </li>
+    </ul>
+  </div>
+</div>
